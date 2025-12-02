@@ -6,9 +6,6 @@
   <title>Accompagnateur en montagne - Yann Pasqualini</title>
   <meta name="description" content="Yann Pasqualini, accompagnateur en montagne basé à Biguglia (Corse). Randonnées, sorties raquettes, treks et découvertes nature pour tous les niveaux.">
   <style>
-    /* -------------------------
-       STYLES GLOBAUX
-    --------------------------*/
     * {
       box-sizing: border-box;
       margin: 0;
@@ -40,9 +37,6 @@
       padding: 0 1.5rem;
     }
 
-    /* -------------------------
-       HEADER & NAVBAR
-    --------------------------*/
     header {
       position: sticky;
       top: 0;
@@ -93,9 +87,6 @@
       width: 100%;
     }
 
-    /* -------------------------
-       SECTION HERO
-    --------------------------*/
     .hero {
       padding: 4rem 0 3rem;
       background: radial-gradient(circle at top, #0f172a, #020617);
@@ -248,9 +239,6 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
     }
 
-    /* -------------------------
-       SECTION GÉNÉRIQUE
-    --------------------------*/
     section {
       padding: 3rem 0;
     }
@@ -272,9 +260,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* -------------------------
-       SECTION À PROPOS
-    --------------------------*/
     .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
@@ -317,9 +302,6 @@
       line-height: 1.2;
     }
 
-    /* -------------------------
-       SECTION SORTIES
-    --------------------------*/
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -377,9 +359,6 @@
       color: #e5e7eb;
     }
 
-    /* -------------------------
-       SECTION INFOS PRATIQUES
-    --------------------------*/
     .info-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
@@ -402,9 +381,6 @@
       margin-top: 0.6rem;
     }
 
-    /* -------------------------
-       SECTION CONTACT
-    --------------------------*/
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
@@ -464,9 +440,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* -------------------------
-       FOOTER
-    --------------------------*/
     footer {
       border-top: 1px solid rgba(148, 163, 184, 0.35);
       padding: 1.5rem 0 2rem;
@@ -487,9 +460,6 @@
       gap: 1rem;
     }
 
-    /* -------------------------
-       RESPONSIVE
-    --------------------------*/
     @media (max-width: 900px) {
       .hero-inner,
       .about-grid,
@@ -521,7 +491,6 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
   <header>
     <div class="container">
       <nav class="nav">
@@ -536,7 +505,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
     <section class="hero">
       <div class="container hero-inner">
@@ -571,7 +539,7 @@
               Biguglia / Corse
             </div>
           </div>
-          <img src="images/yann-pasqualini.jpg" alt="Yann Pasqualini - Accompagnateur en montagne" class="hero-photo" />
+          <img src="yann-pasqualini.jpg" alt="Yann Pasqualini - Accompagnateur en montagne" class="hero-photo" />
         </div>
 
         <aside class="hero-card">
@@ -590,7 +558,6 @@
       </div>
     </section>
 
-    <!-- À propos -->
     <section id="apropos">
       <div class="container">
         <h2 class="section-title">À propos de moi</h2>
@@ -628,14 +595,13 @@
       </div>
     </section>
 
-    <!-- SORTIES -->
     <section id="sorties">
       <div class="container">
         <h2 class="section-title">Sorties proposées</h2>
         <p class="section-subtitle">Voici mes offres principales. Les itinéraires s’adaptent selon ton niveau et la saison.</p>
 
         <div class="section-image">
-          <img src="images/sortie-raquettes.jpg" alt="Sortie raquettes en montagne avec Yann Pasqualini" />
+          <img src="sortie-raquettes.jpg" alt="Sortie raquettes en montagne avec Yann Pasqualini" />
         </div>
 
         <div class="cards-grid">
@@ -673,14 +639,13 @@
       </div>
     </section>
 
-    <!-- Infos pratiques -->
     <section id="infos">
       <div class="container">
         <h2 class="section-title">Infos pratiques & matériel</h2>
         <p class="section-subtitle">Prépare ta sortie dans les meilleures conditions.</p>
 
         <div class="section-image">
-          <img src="images/coucher-soleil.jpg" alt="Coucher de soleil sur les montagnes corses" />
+          <img src="coucher-soleil.jpg" alt="Coucher de soleil sur les montagnes corses" />
         </div>
 
         <div class="info-grid">
@@ -708,7 +673,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title">Contact & réservation</h2>
@@ -726,12 +690,24 @@
                 <input type="email" id="email" name="Email" placeholder="vous@example.com" required />
               </div>
               <div>
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="Téléphone" placeholder="Votre numéro" />
+              </div>
+              <div>
                 <label for="date">Dates ou période souhaitée</label>
                 <input type="text" id="date" name="Dates" placeholder="Ex : week-end, vacances…" />
               </div>
               <div>
+                <label for="type">Type de sortie</label>
+                <input type="text" id="type" name="Type de sortie" placeholder="Journée, raquettes, à la demande…" />
+              </div>
+              <div>
+                <label for="people">Nombre de personnes</label>
+                <input type="number" id="people" name="Nombre de personnes" min="1" />
+              </div>
+              <div>
                 <label for="message">Message</label>
-                <textarea id="message" name="Message" placeholder="Type de sortie, niveau, nombre de personnes…" required></textarea>
+                <textarea id="message" name="Message" placeholder="Niveaux, envies, précisions…" required></textarea>
               </div>
               <button type="submit" class="btn-primary">Envoyer ma demande</button>
             </form>
@@ -756,7 +732,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <div>© <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne.</div>
