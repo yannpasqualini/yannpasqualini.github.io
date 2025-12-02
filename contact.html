@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & réservation - Yann Pasqualini</title>
+  <meta name="description" content="Contact et réservation avec Yann Pasqualini, accompagnateur en montagne basé à Biguglia (Corse).">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 3rem 0 4rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-subtitle {
+      color: #9ca3af;
+      margin-bottom: 2rem;
+      max-width: 36rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 2.5rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    label {
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.6rem 0.75rem;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 0.7rem 1.6rem;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
+      justify-self: flex-start;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.45);
+    }
+
+    .contact-info {
+      font-size: 0.92rem;
+      color: #9ca3af;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      margin-bottom: 1.2rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">ASPASSU – YANN PASQUALINI</div>
+        <div class="nav-links">
+          <a href="index.html#apropos">À propos</a>
+          <a href="index.html#sorties">Sorties</a>
+          <a href="index.html#infos">Infos pratiques</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTACT -->
+  <main>
+    <div class="container">
+      <span class="badge">Contact & réservation</span>
+      <h1 class="page-title">Organiser une sortie avec moi</h1>
+      <p class="page-subtitle">
+        Remplis ce formulaire avec ton projet de sortie (date, type de randonnée, nombre de personnes…).
+        Je te réponds dès que possible pour confirmer et affiner les détails.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Formulaire -->
+        <div>
+          <!-- Version simple : envoi par email via le client de messagerie -->
+          <form action="mailto:yannpasqualiniaem@gmail.com" method="post" enctype="text/plain">
+            <div>
+              <label for="name">Nom & prénom</label>
+              <input type="text" id="name" name="Nom" placeholder="Votre nom complet" required />
+            </div>
+
+            <div>
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="Email" placeholder="vous@example.com" required />
+            </div>
+
+            <div>
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="Téléphone" placeholder="06..." />
+            </div>
+
+            <div>
+              <label for="date">Date ou période souhaitée</label>
+              <input type="text" id="date" name="Date souhaitée" placeholder="Ex : 15 mars, week-end d’avril…" />
+            </div>
+
+            <div>
+              <label for="type">Type de sortie</label>
+              <select id="type" name="Type de sortie">
+                <option value="">Choisir…</option>
+                <option>Sortie à la journée</option>
+                <option>Sortie raquettes</option>
+                <option>Sortie à la demande (groupe)</option>
+                <option>Autre / à discuter</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="people">Nombre de personnes</label>
+              <input type="number" id="people" name="Nombre de personnes" min="1" placeholder="Ex : 4" />
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" placeholder="Niveaux, envies, lieu souhaité, questions…"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Envoyer ma demande</button>
+          </form>
+        </div>
+
+        <!-- Infos fixes -->
+        <div class="contact-info">
+          <p><strong>Coordonnées directes</strong></p>
+          <ul class="contact-list">
+            <li>Email : <strong>yannpasqualiniaem@gmail.com</strong></li>
+            <li>Téléphone : <strong>06 07 65 64 27</strong></li>
+            <li>Basé à : <strong>Biguglia / Corse</strong></li>
+          </ul>
+
+          <p><strong>Réseaux sociaux</strong></p>
+          <ul class="contact-list">
+            <li><a href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank">Instagram</a></li>
+          </ul>
+
+          <p><strong>Quelques infos utiles</strong></p>
+          <p>
+            • Sorties adaptées à ton niveau<br />
+            • Groupes, familles, entreprises bienvenus<br />
+            • Possibilité de sorties sur mesure en Corse
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne.</div>
+      <div class="footer-links">
+        <a href="index.html#apropos">À propos</a>
+        <a href="index.html#sorties">Sorties</a>
+        <a href="index.html#infos">Infos pratiques</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
