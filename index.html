@@ -2,118 +2,132 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Accompagnateur en montagne Corse | Yann Pasqualini</title>
-  <meta name="description" content="Yann Pasqualini, accompagnateur en montagne en Corse. Randonnées, sorties raquettes, sorties nature et sur mesure à Biguglia et partout en Corse.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accompagnateur en montagne en Corse | Yann Pasqualini</title>
 
-  <!-- SEO local -->
-  <meta name="keywords" content="accompagnateur en montagne Corse, randonnée Corse, raquettes Corse, guide montagne Corse, Biguglia">
+  <meta name="description" content="Yann Pasqualini, accompagnateur en montagne en Corse. Randonnées, sorties raquettes, itinéraires sur mesure, groupes et particuliers.">
+  <meta name="keywords" content="accompagnateur en montagne corse, randonnée corse, sortie raquettes corse, guide montagne corse">
+  <meta name="author" content="Yann Pasqualini">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background:#020617; color:#e5e7eb; line-height:1.6; }
+
+    a { color: inherit; text-decoration: none; }
 
     header {
-      background: #020617;
-      padding: 15px 20px;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      z-index: 10;
     }
 
-    nav {
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
     }
 
     .logo {
       font-weight: bold;
       color: #38bdf8;
+      font-size: 15px;
+      letter-spacing: 1px;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      color: #38bdf8;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+    .menu {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
       align-items: center;
     }
 
-    .hero img {
-      max-width: 100%;
-      border-radius: 15px;
+    .menu a:hover { color:#38bdf8; }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 15px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    .buttons {
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color:#38bdf8;
+    }
+
+    .hero p { color:#cbd5f5; margin-bottom: 10px; }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
       margin-top: 20px;
     }
 
     .btn {
-      display: inline-block;
-      margin: 8px 10px 0 0;
-      padding: 12px 20px;
-      border-radius: 30px;
-      background: #38bdf8;
-      color: #020617;
-      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
       font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .btn.whatsapp {
-      background: #25d366;
-      color: #ffffff;
+    .call { background:#38bdf8; color:#020617; }
+    .whatsapp { background:#22c55e; color:#020617; }
+
+    .hero img {
+      width: 100%;
+      border-radius: 18px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 15px;
+    }
+
+    section h2 {
+      color:#38bdf8;
+      margin-bottom: 20px;
+      font-size: 26px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .card {
-      background: #020617;
-      padding: 20px;
+      background:#020617;
+      border:1px solid #1e293b;
       border-radius: 15px;
+      padding: 20px;
     }
 
     footer {
-      background: #020617;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
+      border-top:1px solid #1e293b;
+      text-align:center;
+      padding:25px;
+      font-size:13px;
+      color:#94a3b8;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+    /* MOBILE */
+    @media(max-width:900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .menu { display:none; }
     }
   </style>
 </head>
@@ -121,92 +135,71 @@
 <body>
 
 <header>
-  <nav>
+  <div class="nav">
     <div class="logo">ASPASSU – YANN PASQUALINI</div>
-    <div>
+    <div class="menu">
       <a href="#apropos">À propos</a>
       <a href="#sorties">Sorties</a>
       <a href="#contact">Contact</a>
       <a href="https://www.facebook.com/share/1D5Dq3e9D9/" target="_blank">Facebook</a>
       <a href="https://www.instagram.com/aspassu_yannpasqualini" target="_blank">Instagram</a>
     </div>
-  </nav>
+  </div>
 </header>
 
-<section class="hero">
+<div class="hero">
   <div>
     <h1>Accompagnateur en montagne en Corse</h1>
     <p><strong>Yann Pasqualini</strong></p>
     <p>Randonnées, sorties raquettes, sorties nature et itinéraires sur mesure partout en Corse.</p>
     <p><strong>6 ans d’expérience – ~100 sorties par an</strong></p>
 
-    <div class="buttons">
-      <a class="btn" href="tel:+33607656427">📞 Appeler</a>
+    <div class="hero-buttons">
+      <a class="btn call" href="tel:+33607656427">📞 Appeler</a>
       <a class="btn whatsapp" href="https://wa.me/33607656427" target="_blank">💬 WhatsApp</a>
     </div>
   </div>
 
-  <img src="yann-pasqualini.jpg" alt="Yann Pasqualini accompagnateur en montagne Corse">
-</section>
+  <img src="yann-pasqualini.jpg" alt="Yann Pasqualini accompagnateur en montagne en Corse">
+</div>
 
 <section id="apropos">
   <h2>À propos</h2>
   <p>
-    Accompagnateur en montagne diplômé basé à <strong>Biguglia (Corse)</strong>,
-    je vous propose des sorties adaptées à tous les niveaux,
-    dans une approche conviviale, sécurisée et respectueuse de la nature.
+    Accompagnateur en montagne diplômé, je vous fais découvrir la Corse
+    à travers des sorties adaptées à votre niveau, en toute sécurité,
+    dans le respect de la nature.
   </p>
 </section>
 
 <section id="sorties">
   <h2>Sorties proposées</h2>
-
   <div class="cards">
     <div class="card">
-      <h3>Sortie à la journée</h3>
-      <p>Découverte des sentiers corses.</p>
-      <p><strong>À partir de 35 € / personne</strong></p>
+      <h3>Randonnée journée</h3>
+      <p>Découverte des sentiers corses, panoramas et nature.</p>
     </div>
-
     <div class="card">
       <h3>Sortie raquettes</h3>
-      <p>Montagne enneigée, ambiance sauvage.</p>
-      <p><strong>À partir de 35 € / personne</strong></p>
+      <p>Montagne enneigée, ambiance sauvage, accessible à tous.</p>
     </div>
-
     <div class="card">
-      <h3>Sortie à la demande</h3>
-      <p>Groupes, entreprises, familles.</p>
-      <p><strong>À partir de 250 € / groupe</strong></p>
+      <h3>Sortie sur mesure</h3>
+      <p>Groupes, familles, entreprises, itinéraires personnalisés.</p>
     </div>
   </div>
-
-  <br>
-  <img src="sortie-raquettes.jpg" alt="Sortie raquettes en Corse" style="width:100%;border-radius:15px;">
 </section>
 
 <section id="contact">
   <h2>Contact & réservation</h2>
-  <p><strong>Email :</strong> yannpasqualiniaem@gmail.com</p>
-  <p><strong>Téléphone :</strong> 06 07 65 64 27</p>
-  <p><strong>Lieu :</strong> Biguglia / Corse</p>
-
-  <div class="buttons">
-    <a class="btn" href="mailto:yannpasqualiniaem@gmail.com">✉️ Email</a>
-    <a class="btn whatsapp" href="https://wa.me/33607656427" target="_blank">💬 WhatsApp</a>
-  </div>
-
-  <br>
-  <img src="coucher-soleil.jpg" alt="Coucher de soleil en montagne Corse" style="width:100%;border-radius:15px;">
+  <p>Email : <strong>yannpasqualiniaem@gmail.com</strong></p>
+  <p>Téléphone : <strong>06 07 65 64 27</strong></p>
+  <p>Basé à : <strong>Biguglia – Corse</strong></p>
 </section>
 
 <footer>
-  © <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne Corse
+  © 2026 Yann Pasqualini – Accompagnateur en montagne en Corse
 </footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
