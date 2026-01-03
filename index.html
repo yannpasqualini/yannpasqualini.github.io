@@ -1,209 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accompagnateur en montagne – Yann Pasqualini</title>
+  <meta charset="UTF-8">
+  <title>Accompagnateur en montagne en Corse | Yann Pasqualini</title>
 
-<meta name="description" content="Yann Pasqualini, accompagnateur en montagne en Corse. Randonnées, sorties raquettes, sorties nature et sur mesure.">
+  <meta name="description" content="Yann Pasqualini, accompagnateur en montagne en Corse. Randonnées, sorties raquettes, sorties nature sur mesure à Biguglia, Bastia et en Haute-Corse.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-body{
-  background:#020617;
-  color:#e5e7eb;
-  line-height:1.6;
-}
+  <!-- SEO local -->
+  <meta name="geo.region" content="FR-2B">
+  <meta name="geo.placename" content="Biguglia, Corse">
+  <meta name="geo.position" content="42.627;9.436">
+  <meta name="ICBM" content="42.627, 9.436">
 
-/* pour ne pas cacher le footer sur mobile */
-@media(max-width:768px){
-  body{padding-bottom:90px}
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
 
-a{color:inherit;text-decoration:none}
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
 
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#0f172a;
-  border-bottom:1px solid #334155;
-}
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-.nav{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    .navigation {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.logo{
-  color:#38bdf8;
-  font-weight:800;
-  letter-spacing:.06em;
-}
+    .logo {
+      font-weight: bold;
+      color: #38bdf8;
+    }
 
-.nav-links{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  font-size:14px;
-}
+    nav a {
+      margin-left: 15px;
+      font-size: 14px;
+    }
 
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-}
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 15px;
+    }
 
-.hero h1{
-  font-size:2.6rem;
-  margin-bottom:10px;
-}
+    h1, h2 {
+      color: #38bdf8;
+    }
 
-.hero span{color:#38bdf8}
+    .hero img {
+      max-width: 220px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
 
-.hero p{
-  color:#9ca3af;
-  max-width:600px;
-}
+    .boutons-mobile {
+      display: none;
+    }
 
-.hero img{
-  max-width:220px;
-  border-radius:20px;
-  margin-top:25px;
-}
+    .bouton {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px 10px 0 0;
+      border-radius: 30px;
+      color: #020617;
+      font-weight: bold;
+    }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
+    .appel {
+      background: #22c55e;
+    }
 
-.card{
-  background:#0f172a;
-  border:1px solid #334155;
-  padding:20px;
-  border-radius:20px;
-}
+    .whatsapp {
+      background: #25D366;
+    }
 
-.price{
-  font-weight:700;
-  margin-top:10px;
-}
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
 
-footer{
-  border-top:1px solid #334155;
-  padding:30px 20px;
-  text-align:center;
-  font-size:14px;
-  color:#94a3b8;
-}
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        margin-top: 10px;
+      }
 
-/* ===== Boutons Appel & WhatsApp ===== */
-.mobile-actions{
-  position:fixed;
-  bottom:12px;
-  left:50%;
-  transform:translateX(-50%);
-  display:none;
-  gap:12px;
-  z-index:9999;
-}
-
-.mobile-actions a{
-  padding:14px 20px;
-  border-radius:999px;
-  font-weight:800;
-  color:white;
-  box-shadow:0 10px 26px rgba(0,0,0,.45);
-}
-
-.call-btn{background:#2563eb}
-.whatsapp-btn{background:#22c55e}
-
-@media(max-width:768px){
-  .mobile-actions{display:flex}
-}
-</style>
+      .boutons-mobile {
+        display: block;
+        margin-top: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="navigation">
     <div class="logo">ASPASSU – YANN PASQUALINI</div>
-    <div class="nav-links">
+    <nav>
       <a href="#apropos">À propos</a>
       <a href="#sorties">Sorties</a>
       <a href="#contact">Contact</a>
       <a href="https://www.facebook.com/share/1D5Dq3e9D9/" target="_blank">Facebook</a>
       <a href="https://www.instagram.com/aspassu_yannpasqualini" target="_blank">Instagram</a>
-    </div>
+    </nav>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Je suis <span>Yann Pasqualini</span><br>Accompagnateur en montagne</h1>
-  <p>Randonnées, raquettes, sorties nature et sur mesure en Corse.</p>
-  <p><strong>6 ans d’expérience – ~100 sorties / an</strong></p>
-  <img src="yann-pasqualini.jpg" alt="Yann Pasqualini">
+  <h1>Accompagnateur en montagne en Corse</h1>
+  <p><strong>Yann Pasqualini</strong> – Randonnées, raquettes et sorties nature sur mesure en Corse.</p>
+  <p>Basé à <strong>Biguglia</strong>, j’encadre des sorties en Haute-Corse pour particuliers, familles et groupes.</p>
+  <p><strong>6 ans d’expérience – plus de 100 sorties par an</strong></p>
+
+  <img src="yann-pasqualini.jpg" alt="Yann Pasqualini accompagnateur en montagne en Corse">
+
+  <div class="boutons-mobile">
+    <a href="tel:+33607656427" class="bouton appel">📞 Appeler</a>
+    <a href="https://wa.me/33607656427" class="bouton whatsapp">💬 WhatsApp</a>
+  </div>
 </section>
 
 <section id="apropos">
   <h2>À propos</h2>
   <p>
-    Accompagnateur en montagne diplômé, je vous fais découvrir la Corse
-    autrement, en toute sécurité et convivialité.
+    Accompagnateur en montagne diplômé, passionné par la Corse et ses reliefs,
+    je propose des sorties accessibles, sécurisées et conviviales.
   </p>
 </section>
 
 <section id="sorties">
   <h2>Sorties proposées</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Sortie à la journée</h3>
-      <p>Découverte des sentiers corses.</p>
-      <div class="price">À partir de 35 € / personne</div>
-    </div>
-
-    <div class="card">
-      <h3>Sortie raquettes</h3>
-      <p>Montagne enneigée – location possible.</p>
-      <div class="price">À partir de 35 € / personne</div>
-    </div>
-
-    <div class="card">
-      <h3>Sortie privée</h3>
-      <p>Groupes, familles, entreprises.</p>
-      <div class="price">À partir de 250 € / groupe</div>
-    </div>
-  </div>
+  <ul>
+    <li>Randonnées à la journée</li>
+    <li>Sorties raquettes en hiver</li>
+    <li>Sorties privées et sur mesure</li>
+    <li>Groupes, familles, entreprises</li>
+  </ul>
 </section>
 
 <section id="contact">
   <h2>Contact & réservation</h2>
+
   <p>Email : <strong>yannpasqualiniaem@gmail.com</strong></p>
   <p>Téléphone : <strong>06 07 65 64 27</strong></p>
-  <p>Basé à Biguglia / Corse</p>
+  <p>Lieu : <strong>Biguglia – Corse</strong></p>
+
+  <p>
+    <a href="https://www.facebook.com/share/1D5Dq3e9D9/" target="_blank">Facebook</a> |
+    <a href="https://www.instagram.com/aspassu_yannpasqualini" target="_blank">Instagram</a>
+  </p>
+
+  <div class="boutons-mobile">
+    <a href="tel:+33607656427" class="bouton appel">📞 Appeler</a>
+    <a href="https://wa.me/33607656427" class="bouton whatsapp">💬 WhatsApp</a>
+  </div>
 </section>
 
 <footer>
-  © <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne
+  © <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne en Corse
 </footer>
 
-<!-- Boutons mobiles -->
-<div class="mobile-actions">
-  <a href="tel:0607656427" class="call-btn">📞 Appeler</a>
-  <a href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie." 
-     target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
-</div>
-
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
