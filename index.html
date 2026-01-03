@@ -1,359 +1,209 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accompagnateur en montagne - Yann Pasqualini</title>
-  <meta name="description" content="Yann Pasqualini, accompagnateur en montagne basé à Biguglia (Corse). Randonnées, sorties raquettes, treks et découvertes nature." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accompagnateur en montagne – Yann Pasqualini</title>
 
-  <!-- Icônes réseaux -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="description" content="Yann Pasqualini, accompagnateur en montagne en Corse. Randonnées, sorties raquettes, sorties nature et sur mesure.">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    body{background:#020617;color:#e5e7eb;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+body{
+  background:#020617;
+  color:#e5e7eb;
+  line-height:1.6;
+}
 
-    /* Pour éviter que les boutons mobiles cachent le bas de page */
-    @media (max-width: 768px){
-      body{ padding-bottom: 80px; }
-    }
+/* pour ne pas cacher le footer sur mobile */
+@media(max-width:768px){
+  body{padding-bottom:90px}
+}
 
-    .container{max-width:1100px;margin:0 auto;padding:0 1.2rem}
+a{color:inherit;text-decoration:none}
 
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(15,23,42,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(148,163,184,.25);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-    .logo{font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#38bdf8;font-size:.95rem}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#0f172a;
+  border-bottom:1px solid #334155;
+}
 
-    .nav-links{display:flex;gap:1.1rem;align-items:center;font-size:.95rem}
-    .nav-links a{opacity:.92}
-    .nav-links a:hover{opacity:1}
-    .social i{font-size:1.15rem}
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .hero{padding:3.5rem 0 2.5rem;background:radial-gradient(circle at top,#0f172a,#020617)}
-    .hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:2rem;align-items:center}
-    .badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;padding:.25rem .7rem;border-radius:999px;background:rgba(56,189,248,.15);color:#7dd3fc;margin-bottom:1rem}
-    .badge-dot{width:8px;height:8px;border-radius:999px;background:#22c55e}
-    .hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:.8rem}
-    .hero h1 span{color:#38bdf8}
-    .hero p{color:#9ca3af;margin-bottom:1rem;max-width:42rem}
+.logo{
+  color:#38bdf8;
+  font-weight:800;
+  letter-spacing:.06em;
+}
 
-    .meta{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1rem;color:#9ca3af;font-size:.9rem}
-    .meta strong{display:block;color:#e5e7eb;font-size:1rem}
+.nav-links{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  font-size:14px;
+}
 
-    .hero-photo{
-      max-width:220px;border-radius:1rem;border:1px solid rgba(148,163,184,.35);
-      box-shadow:0 16px 40px rgba(15,23,42,.8)
-    }
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    section{padding:3rem 0}
-    .section-title{font-size:1.6rem;margin-bottom:.4rem}
-    .section-sub{color:#9ca3af;margin-bottom:1.6rem;max-width:44rem}
+.hero h1{
+  font-size:2.6rem;
+  margin-bottom:10px;
+}
 
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-    .card{
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(148,163,184,.25);
-      border-radius:1rem;padding:1.1rem
-    }
-    .card h3{margin-bottom:.3rem}
-    .card p{color:#9ca3af;font-size:.92rem}
-    .price{margin-top:.6rem;font-weight:700}
+.hero span{color:#38bdf8}
 
-    .block{
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(148,163,184,.25);
-      border-radius:1rem;padding:1.2rem
-    }
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.hero p{
+  color:#9ca3af;
+  max-width:600px;
+}
 
-    .imgbox{border-radius:1rem;overflow:hidden;border:1px solid rgba(148,163,184,.25);margin:1rem 0}
+.hero img{
+  max-width:220px;
+  border-radius:20px;
+  margin-top:25px;
+}
 
-    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem}
-    form{display:grid;gap:.8rem}
-    input,textarea{
-      width:100%;padding:.65rem .75rem;border-radius:.7rem;
-      border:1px solid rgba(148,163,184,.4);
-      background:rgba(2,6,23,.7);color:#e5e7eb;outline:none
-    }
-    textarea{min-height:120px;resize:vertical}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
-    button{
-      border:none;border-radius:999px;padding:.75rem 1.2rem;
-      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
-      color:#0b1120;font-weight:800;cursor:pointer
-    }
+.card{
+  background:#0f172a;
+  border:1px solid #334155;
+  padding:20px;
+  border-radius:20px;
+}
 
-    footer{
-      border-top:1px solid rgba(148,163,184,.25);
-      padding:1.6rem 0 2rem;color:#6b7280;font-size:.85rem
-    }
-    .footer-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
-    .footer-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-    .footer-links .social i{font-size:1.05rem}
+.price{
+  font-weight:700;
+  margin-top:10px;
+}
 
-    @media(max-width:900px){
-      .hero-grid,.grid-2,.cards,.contact-grid{grid-template-columns:1fr}
-      .nav-links{flex-wrap:wrap;justify-content:flex-end}
-    }
+footer{
+  border-top:1px solid #334155;
+  padding:30px 20px;
+  text-align:center;
+  font-size:14px;
+  color:#94a3b8;
+}
 
-    /* ===== Boutons mobiles (Appeler + WhatsApp) ===== */
-    .mobile-actions{
-      position: fixed;
-      left: 50%;
-      bottom: 12px;
-      transform: translateX(-50%);
-      display: none;
-      gap: 12px;
-      z-index: 9999;
-    }
-    .mobile-actions a{
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 15px;
-      color: #fff;
-      box-shadow: 0 10px 26px rgba(0,0,0,.45);
-      border: 1px solid rgba(255,255,255,.15);
-      backdrop-filter: blur(6px);
-      -webkit-tap-highlight-color: transparent;
-    }
-    .mobile-actions a:active{ transform: translateY(1px); }
-    .call-btn{ background: #2563eb; }
-    .wa-btn{ background: #22c55e; }
+/* ===== Boutons Appel & WhatsApp ===== */
+.mobile-actions{
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  gap:12px;
+  z-index:9999;
+}
 
-    @media (max-width: 768px){
-      .mobile-actions{ display: flex; }
-    }
-  </style>
+.mobile-actions a{
+  padding:14px 20px;
+  border-radius:999px;
+  font-weight:800;
+  color:white;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);
+}
+
+.call-btn{background:#2563eb}
+.whatsapp-btn{background:#22c55e}
+
+@media(max-width:768px){
+  .mobile-actions{display:flex}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <nav class="nav">
-      <div class="logo">ASPASSU – YANN PASQUALINI</div>
-
-      <div class="nav-links">
-        <a href="#apropos">À propos</a>
-        <a href="#sorties">Sorties</a>
-        <a href="#infos">Infos</a>
-        <a href="#contact">Contact</a>
-
-        <a class="social" href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-          <i class="fa-brands fa-facebook" style="color:#1877f2"></i>
-        </a>
-        <a class="social" href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
-          <i class="fa-brands fa-instagram" style="color:#e1306c"></i>
-        </a>
-      </div>
-    </nav>
+  <div class="nav">
+    <div class="logo">ASPASSU – YANN PASQUALINI</div>
+    <div class="nav-links">
+      <a href="#apropos">À propos</a>
+      <a href="#sorties">Sorties</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.facebook.com/share/1D5Dq3e9D9/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/aspassu_yannpasqualini" target="_blank">Instagram</a>
+    </div>
   </div>
 </header>
 
-<main>
+<section class="hero">
+  <h1>Je suis <span>Yann Pasqualini</span><br>Accompagnateur en montagne</h1>
+  <p>Randonnées, raquettes, sorties nature et sur mesure en Corse.</p>
+  <p><strong>6 ans d’expérience – ~100 sorties / an</strong></p>
+  <img src="yann-pasqualini.jpg" alt="Yann Pasqualini">
+</section>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge"><span class="badge-dot"></span> Accompagnateur en montagne · Corse</div>
-        <h1>Je suis <span>Yann Pasqualini</span>,<br>accompagnateur en montagne.</h1>
-        <p>Je t’emmène découvrir la montagne en toute sécurité : randonnées à la journée, sorties raquettes, treks et itinéraires sur mesure.</p>
+<section id="apropos">
+  <h2>À propos</h2>
+  <p>
+    Accompagnateur en montagne diplômé, je vous fais découvrir la Corse
+    autrement, en toute sécurité et convivialité.
+  </p>
+</section>
 
-        <div class="meta">
-          <div><strong>6 ans</strong>d’expérience</div>
-          <div><strong>~100</strong>sorties/an</div>
-          <div><strong>Basé à</strong>Biguglia / Corse</div>
-        </div>
+<section id="sorties">
+  <h2>Sorties proposées</h2>
 
-        <div style="margin-top:1.2rem">
-          <img class="hero-photo" src="yann-pasqualini.jpg" alt="Yann Pasqualini">
-        </div>
-      </div>
-
-      <div class="block">
-        <h3 style="margin-bottom:.5rem">Prochaines disponibilités</h3>
-        <p style="color:#9ca3af;margin-bottom:.8rem">Week-ends & semaine</p>
-        <ul style="list-style:none;color:#cbd5e1">
-          <li>• Randonnées journée</li>
-          <li>• Raquettes en hiver</li>
-          <li>• Sorties personnalisées</li>
-          <li>• Groupes / familles / entreprises</li>
-        </ul>
-      </div>
+  <div class="cards">
+    <div class="card">
+      <h3>Sortie à la journée</h3>
+      <p>Découverte des sentiers corses.</p>
+      <div class="price">À partir de 35 € / personne</div>
     </div>
-  </section>
 
-  <section id="apropos">
-    <div class="container">
-      <h2 class="section-title">À propos</h2>
-      <p class="section-sub">Un accompagnement professionnel et bienveillant pour découvrir la Corse en profondeur.</p>
-
-      <div class="grid-2">
-        <div class="block">
-          <h3>Mon parcours</h3>
-          <p style="color:#9ca3af">Accompagnateur en montagne diplômé, passionné par notre île, j’adapte chaque sortie au niveau et aux envies.</p>
-          <ul style="list-style:none;margin-top:.8rem;color:#cbd5e1">
-            <li>✔ Encadrement sécurisé</li>
-            <li>✔ Connaissance du terrain</li>
-            <li>✔ Ambiance conviviale</li>
-          </ul>
-        </div>
-
-        <div class="block">
-          <h3>Ma vision</h3>
-          <p style="color:#9ca3af">La montagne est un espace de partage et d’évasion. Mon objectif : te faire vivre un moment authentique.</p>
-          <ul style="list-style:none;margin-top:.8rem;color:#cbd5e1">
-            <li>➤ Tous niveaux</li>
-            <li>➤ Groupes / entreprises</li>
-            <li>➤ Sur-mesure possible</li>
-          </ul>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Sortie raquettes</h3>
+      <p>Montagne enneigée – location possible.</p>
+      <div class="price">À partir de 35 € / personne</div>
     </div>
-  </section>
 
-  <section id="sorties">
-    <div class="container">
-      <h2 class="section-title">Sorties proposées</h2>
-      <p class="section-sub">Les itinéraires s’adaptent selon ton niveau et la saison.</p>
-
-      <div class="imgbox">
-        <img src="sortie-raquettes.jpg" alt="Sortie raquettes">
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Sortie à la journée</h3>
-          <p>Découverte des sentiers de Corse : panoramas, nature, immersion.</p>
-          <div class="price">À partir de 35 € / personne</div>
-        </div>
-
-        <div class="card">
-          <h3>Sortie raquettes</h3>
-          <p>Ambiance enneigée. Location des raquettes possible.</p>
-          <div class="price">À partir de 35 € / personne</div>
-        </div>
-
-        <div class="card">
-          <h3>Sortie à la demande</h3>
-          <p>Groupe privé : entreprises, familles, amis. Parcours au choix.</p>
-          <div class="price">À partir de 250 € / groupe</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="infos">
-    <div class="container">
-      <h2 class="section-title">Infos pratiques</h2>
-      <p class="section-sub">Prépare ta sortie dans les meilleures conditions.</p>
-
-      <div class="imgbox">
-        <img src="coucher-soleil.jpg" alt="Coucher de soleil">
-      </div>
-
-      <div class="grid-2">
-        <div class="block">
-          <h3>Matériel conseillé</h3>
-          <ul style="list-style:none;color:#cbd5e1;margin-top:.6rem">
-            <li>• Chaussures de randonnée</li>
-            <li>• Vêtements (3 couches)</li>
-            <li>• Eau + encas</li>
-            <li>• Protection solaire</li>
-            <li>• Bâtons recommandés</li>
-          </ul>
-        </div>
-
-        <div class="block">
-          <h3>Niveaux & sécurité</h3>
-          <ul style="list-style:none;color:#cbd5e1;margin-top:.6rem">
-            <li>• Débutants et confirmés</li>
-            <li>• Adaptation selon météo</li>
-            <li>• Encadrement diplômé</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact & réservation</h2>
-      <p class="section-sub">Une question ? Une idée de sortie ? Contacte-moi !</p>
-
-      <div class="contact-grid">
-        <div class="block">
-          <form action="mailto:yannpasqualiniaem@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="Nom" placeholder="Nom complet" required>
-            <input type="email" name="Email" placeholder="Adresse e-mail" required>
-            <input type="tel" name="Téléphone" placeholder="Téléphone">
-            <input type="text" name="Dates" placeholder="Dates / période souhaitée">
-            <input type="text" name="Type" placeholder="Type de sortie (journée, raquettes, sur mesure…)">
-            <textarea name="Message" placeholder="Ta demande (niveau, envies, précisions…)" required></textarea>
-            <button type="submit">Envoyer ma demande</button>
-          </form>
-        </div>
-
-        <div class="block">
-          <p><strong>Email :</strong> yannpasqualiniaem@gmail.com</p>
-          <p><strong>Téléphone :</strong> 06 07 65 64 27</p>
-          <p><strong>Basé à :</strong> Biguglia / Corse</p>
-
-          <p style="margin-top:1rem"><strong>Réseaux :</strong></p>
-          <p style="display:flex;gap:.8rem;align-items:center;margin-top:.4rem">
-            <a class="social" href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank">
-              <i class="fa-brands fa-facebook" style="color:#1877f2"></i> Facebook
-            </a>
-          </p>
-          <p style="display:flex;gap:.8rem;align-items:center;margin-top:.4rem">
-            <a class="social" href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank">
-              <i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container footer-row">
-    <div>© <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne.</div>
-    <div class="footer-links">
-      <a href="#apropos">À propos</a>
-      <a href="#sorties">Sorties</a>
-      <a href="#infos">Infos</a>
-      <a href="#contact">Contact</a>
-      <a class="social" href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook" style="color:#1877f2"></i>
-      </a>
-      <a class="social" href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram" style="color:#e1306c"></i>
-      </a>
+    <div class="card">
+      <h3>Sortie privée</h3>
+      <p>Groupes, familles, entreprises.</p>
+      <div class="price">À partir de 250 € / groupe</div>
     </div>
   </div>
+</section>
+
+<section id="contact">
+  <h2>Contact & réservation</h2>
+  <p>Email : <strong>yannpasqualiniaem@gmail.com</strong></p>
+  <p>Téléphone : <strong>06 07 65 64 27</strong></p>
+  <p>Basé à Biguglia / Corse</p>
+</section>
+
+<footer>
+  © <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne
 </footer>
 
 <!-- Boutons mobiles -->
-<div class="mobile-actions" aria-label="Actions rapides mobile">
-  <a class="call-btn" href="tel:0607656427">📞 Appeler</a>
-  <a class="wa-btn" target="_blank"
-     href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie.%20Voici%20mes%20infos%20%3A%20date%2C%20nombre%20de%20personnes%2C%20niveau%2C%20secteur%20souhait%C3%A9.">
-     💬 WhatsApp
-  </a>
+<div class="mobile-actions">
+  <a href="tel:0607656427" class="call-btn">📞 Appeler</a>
+  <a href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie." 
+     target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
 </div>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
