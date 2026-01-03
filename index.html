@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accompagnateur en montagne - Yann Pasqualini</title>
   <meta name="description" content="Yann Pasqualini, accompagnateur en montagne basé à Biguglia (Corse). Randonnées, sorties raquettes, treks et découvertes nature pour tous les niveaux.">
+
+  <!-- Icônes (logos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -63,7 +66,8 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 1.2rem;
       font-size: 0.95rem;
     }
 
@@ -86,6 +90,40 @@
     .nav-links a:hover::after {
       width: 100%;
     }
+
+    /* --- Icônes réseaux (header + footer) --- */
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.85);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      padding-bottom: 0; /* évite le soulignement animé */
+    }
+
+    .social-icon::after { display: none; } /* enlève l’underline des liens icônes */
+
+    .social-icon i {
+      font-size: 1.05rem;
+      transition: transform 0.15s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.8);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .social-icon:hover i {
+      transform: scale(1.12);
+    }
+
+    .social-icon.facebook i { color: #1877f2; }
+    .social-icon.instagram i { color: #e1306c; }
 
     .hero {
       padding: 4rem 0 3rem;
@@ -457,7 +495,8 @@
 
     .footer-links {
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      gap: 0.8rem;
     }
 
     @media (max-width: 900px) {
@@ -490,18 +529,28 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
       <nav class="nav">
         <div class="logo">ASPASSU – YANN PASQUALINI</div>
+
         <div class="nav-links">
           <a href="#apropos">À propos</a>
           <a href="#sorties">Sorties</a>
           <a href="#infos">Infos pratiques</a>
           <a href="contact.html">Contact</a>
-<a href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank">Facebook</a>
-  <a href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank">Instagram</a>       
+
+          <!-- Logos réseaux (en haut) -->
+          <a class="social-icon facebook" href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a class="social-icon instagram" href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+
       </nav>
     </div>
   </header>
@@ -736,13 +785,20 @@
   <footer>
     <div class="container footer-inner">
       <div>© <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne.</div>
+
       <div class="footer-links">
         <a href="#apropos">À propos</a>
         <a href="#sorties">Sorties</a>
         <a href="#infos">Infos pratiques</a>
-        <a href="#contact">Contact</a>
-         <a href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank">Facebook</a>
-  <a href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- Logos réseaux (en bas) -->
+        <a class="social-icon facebook" href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a class="social-icon instagram" href="https://www.instagram.com/aspassu_yannpasqualini?igsh=MWt3ZTg4N3M1dGM3dA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
       </div>
     </div>
   </footer>
@@ -752,6 +808,3 @@
   </script>
 </body>
 </html>
-
-
-
