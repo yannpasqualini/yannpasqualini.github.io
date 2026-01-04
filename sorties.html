@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorties - Yann Pasqualini (Accompagnateur en montagne en Corse)</title>
+
+  <meta name="description" content="Découvrez les sorties proposées par Yann Pasqualini, accompagnateur en montagne en Corse : semi-nocturne de Biguglia, Paglia Orba, transversale Corte-Ota, initiation à la marche nordique." />
+  <link rel="canonical" href="https://yannpasqualini.github.io/sorties.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sorties - Yann Pasqualini (Accompagnateur en montagne en Corse)" />
+  <meta property="og:description" content="Semi-nocturne de Biguglia, Paglia Orba, Transversale Corte-Ota, initiation à la marche nordique." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yannpasqualini.github.io/sorties.html" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { background: #020617; color: #e5e7eb; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; }
+    .logo { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.08em; text-transform: uppercase; color: #38bdf8; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 1.2rem; font-size: 0.95rem; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { position: relative; padding-bottom: 0.2rem; opacity: 0.95; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: #38bdf8; transition: width 0.25s ease; }
+    .nav-links a.link:hover::after { width: 100%; }
+
+    .social { display: inline-flex; align-items: center; gap: 0.6rem; margin-left: 0.2rem; }
+    .social a {
+      width: 32px; height: 32px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(2, 6, 23, 0.2);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .social a:hover { transform: translateY(-1px); border-color: #38bdf8; }
+    .social svg { width: 18px; height: 18px; }
+
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+    }
+    .breadcrumb { color: #9ca3af; font-size: 0.95rem; margin-bottom: 1rem; }
+    .breadcrumb a { color: #7dd3fc; }
+    .hero-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 0.8rem; }
+    .hero-sub { color: #9ca3af; max-width: 52rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      padding: 2.5rem 0 3rem;
+    }
+
+    .card {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.65);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-media { aspect-ratio: 16 / 9; background: rgba(2, 6, 23, 0.35); }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    .card-body { padding: 1.2rem; display: grid; gap: 0.75rem; }
+    .card h2 { font-size: 1.2rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; color: #9ca3af; font-size: 0.9rem; }
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: #cbd5f5;
+    }
+
+    .desc { color: #cbd5f5; font-size: 0.95rem; }
+    details { border-top: 1px solid rgba(148, 163, 184, 0.25); padding-top: 0.8rem; }
+    summary { cursor: pointer; color: #7dd3fc; font-weight: 650; }
+    .more { margin-top: 0.6rem; color: #9ca3af; display: grid; gap: 0.4rem; font-size: 0.95rem; }
+    .more ul { margin-left: 1.2rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.2rem; }
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1rem;
+      font-size: 0.95rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: transparent;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(15, 23, 42, 0.9); border-color: #38bdf8; }
+    .btn.primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      font-weight: 750;
+      border-color: transparent;
+    }
+    .btn.primary:hover { background: linear-gradient(135deg, #5fd3ff, #0ea5e9); }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem 0 2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    footer .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { gap: 0.8rem; font-size: 0.9rem; }
+      .logo { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="Navigation principale">
+        <div class="logo">ASPASSU – YANN PASQUALINI</div>
+
+        <div class="nav-links">
+          <a class="link" href="index.html#apropos">À propos</a>
+          <a class="link" href="sorties.html">Sorties</a>
+          <a class="link" href="index.html#infos">Infos pratiques</a>
+          <a class="link" href="index.html#contact">Contact</a>
+
+          <div class="social" aria-label="Réseaux sociaux">
+            <a href="https://www.facebook.com/share/1D5Dq3e9D9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.02H7.9v-2.91h2.4V9.85c0-2.37 1.41-3.68 3.57-3.68 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.17 0-1.53.73-1.53 1.48v1.78h2.6l-.42 2.91h-2.18V22c4.78-.75 8.44-4.91 8.44-9.93z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/aspassu_yannpasqualini" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#F58529"/>
+                    <stop offset="35%" stop-color="#DD2A7B"/>
+                    <stop offset="70%" stop-color="#8134AF"/>
+                    <stop offset="100%" stop-color="#515BD4"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#ig)" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-.6a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a> → <span>Sorties</span>
+        </div>
+
+        <h1 class="hero-title">Sorties & itinéraires en Corse</h1>
+        <p class="hero-sub">
+          Voici 4 sorties types. Chaque itinéraire est adaptable (niveau, météo, saison, famille/groupe).
+          Pour réserver ou demander une sortie sur mesure : appel ou WhatsApp.
+        </p>
+
+        <div class="actions" style="margin-top:1.25rem;">
+          <a class="btn primary" href="tel:+33607656427">📞 Appeler</a>
+          <a class="btn" href="https://wa.me/33607656427" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          <a class="btn" href="index.html#contact">✉️ Formulaire</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid">
+
+          <!-- 1 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="images/biguglia-semi-nocturne.jpg" alt="Semi-nocturne de Biguglia (Corse)" />
+            </div>
+            <div class="card-body">
+              <h2>Semi-nocturne de Biguglia</h2>
+
+              <div class="meta">
+                <span class="pill">Soirée</span>
+                <span class="pill">Facile → intermédiaire</span>
+                <span class="pill">Idéal été / mi-saison</span>
+              </div>
+
+              <p class="desc">
+                Une sortie en fin de journée pour profiter de la lumière dorée, du calme, et de l’ambiance
+                unique du crépuscule. Parfait pour une première expérience ou une sortie détente.
+              </p>
+
+              <details>
+                <summary>Voir les détails</summary>
+                <div class="more">
+                  <div><strong>Objectif :</strong> nature, panoramas, coucher de soleil, retour à la frontale si besoin.</div>
+                  <div><strong>Durée :</strong> 2h30 à 4h (selon parcours).</div>
+                  <div><strong>Matériel :</strong> chaussures rando, eau, petite laine ; frontale recommandée.</div>
+                  <div><strong>Ce qu’on peut adapter :</strong></div>
+                  <ul>
+                    <li>parcours “découverte” (familles)</li>
+                    <li>version “sportive” avec plus de dénivelé</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="images/paglia-orba.jpg" alt="Paglia Orba (Corse) - sortie accompagnée" />
+            </div>
+            <div class="card-body">
+              <h2>Paglia Orba</h2>
+
+              <div class="meta">
+                <span class="pill">Journée</span>
+                <span class="pill">Sportif</span>
+                <span class="pill">Printemps / été</span>
+              </div>
+
+              <p class="desc">
+                Une grande classique pour celles et ceux qui veulent du relief et des paysages spectaculaires.
+                On vise une sortie solide, bien rythmée, avec un vrai accompagnement sur la gestion de l’effort.
+              </p>
+
+              <details>
+                <summary>Voir les détails</summary>
+                <div class="more">
+                  <div><strong>Objectif :</strong> itinéraire montagne, panoramas grandioses, progression sécurisée.</div>
+                  <div><strong>Durée :</strong> journée complète.</div>
+                  <div><strong>Niveau :</strong> bonne condition physique, marche régulière.</div>
+                  <div><strong>Matériel :</strong> chaussures rando, eau, repas, coupe-vent, protection solaire.</div>
+                  <div><strong>Note :</strong> le parcours exact dépend de la météo et de la saison.</div>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="images/corte-ota.jpg" alt="Transversale Corte-Ota (Corse) - trek accompagné" />
+            </div>
+            <div class="card-body">
+              <h2>Transversale Corte → Ota</h2>
+
+              <div class="meta">
+                <span class="pill">Trek</span>
+                <span class="pill">Intermédiaire → sportif</span>
+                <span class="pill">Sur mesure</span>
+              </div>
+
+              <p class="desc">
+                Une traversée pour découvrir l’intérieur de l’île en itinérance.
+                On construit la version qui te correspond : nombre de jours, étapes, logistique, rythme.
+              </p>
+
+              <details>
+                <summary>Voir les détails</summary>
+                <div class="more">
+                  <div><strong>Format :</strong> itinérance (1 à plusieurs jours).</div>
+                  <div><strong>Objectif :</strong> immersion totale, paysages variés, progression encadrée.</div>
+                  <div><strong>Organisation :</strong> itinéraire, pauses, sécurité, adaptation météo.</div>
+                  <div><strong>Ce qu’on prépare ensemble :</strong></div>
+                  <ul>
+                    <li>durée et étapes</li>
+                    <li>niveau du groupe</li>
+                    <li>matériel & check-list</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="images/marche-nordique.jpg" alt="Initiation à la marche nordique en Corse" />
+            </div>
+            <div class="card-body">
+              <h2>Initiation à la marche nordique</h2>
+
+              <div class="meta">
+                <span class="pill">Technique</span>
+                <span class="pill">Accessible</span>
+                <span class="pill">Bien-être</span>
+              </div>
+
+              <p class="desc">
+                Apprendre les bases (posture, propulsion, rythme) pour marcher mieux, plus longtemps,
+                et solliciter tout le corps sans se “casser”. Idéal en reprise, ou pour compléter la rando.
+              </p>
+
+              <details>
+                <summary>Voir les détails</summary>
+                <div class="more">
+                  <div><strong>Objectif :</strong> technique + endurance douce + conseils d’entraînement.</div>
+                  <div><strong>Durée :</strong> 1h30 à 2h30.</div>
+                  <div><strong>Matériel :</strong> bâtons (si tu en as), tenue confortable, chaussures souples.</div>
+                  <div><strong>Contenu :</strong></div>
+                  <ul>
+                    <li>échauffement + mobilité</li>
+                    <li>apprentissage du geste</li>
+                    <li>mise en pratique sur un parcours adapté</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Yann Pasqualini – Accompagnateur en montagne.</div>
+      <div class="footer-links">
+        <a href="index.html#apropos">À propos</a>
+        <a href="sorties.html">Sorties</a>
+        <a href="index.html#infos">Infos pratiques</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
