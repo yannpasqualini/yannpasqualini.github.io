@@ -137,7 +137,7 @@
     }
     /* ===== FIX images cartes (mobile + desktop) ===== */
 .card-media{
-  aspect-ratio: 3 / 2;     /* tu peux changer en 16/9 si tu préfères */
+  aspect-ratio: 16 / 9;     /* tu peux changer en 16/9 si tu préfères */
   overflow: hidden;
   border-top-left-radius: 18px;   /* adapte si tes cartes ont un radius différent */
   border-top-right-radius: 18px;
@@ -146,8 +146,8 @@
 .card-media img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
-background: #020617;
+ object-fit: cover;
+  object-position: center 35%;
   display: block;
 }
 
