@@ -135,6 +135,27 @@
       .nav-links { gap: 0.8rem; font-size: 0.9rem; }
       .logo { font-size: 0.98rem; }
     }
+    /* ===== FIX images cartes (mobile + desktop) ===== */
+.card-media{
+  aspect-ratio: 4 / 3;     /* tu peux changer en 16/9 si tu préfères */
+  overflow: hidden;
+  border-top-left-radius: 18px;   /* adapte si tes cartes ont un radius différent */
+  border-top-right-radius: 18px;
+}
+
+.card-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ajustements mobiles */
+@media (max-width: 640px){
+  .card-media{
+    aspect-ratio: 4 / 3;   /* essaie 16/9 si tu veux une photo moins “zoomée” */
+  }
+}
   </style>
 </head>
 
