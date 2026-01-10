@@ -146,14 +146,15 @@
 .card-media img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+background: #020617;
   display: block;
 }
 
 /* Ajustements mobiles */
 @media (max-width: 640px){
   .card-media{
-    aspect-ratio:16/9;   /* essaie 16/9 si tu veux une photo moins “zoomée” */
+    aspect-ratio:5 / 3;   /* essaie 16/9 si tu veux une photo moins “zoomée” */
   }
 }
   </style>
