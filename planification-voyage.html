@@ -63,45 +63,186 @@
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<div class="nav">
-  <strong>Yann Pasqualini</strong>
-  <div class="menu">
-    <a href="index.html#apropos">À propos</a>
-    <a href="index.html#infos">Infos pratiques</a>
-    <a href="sorties.html">Sorties</a>
-    <a href="index.html#contact">Contact</a>
+    <!-- NAV -->
+    <div class="nav" style="padding:10px 0 18px 0;">
+      <div class="brand" style="display:flex;align-items:center;gap:12px;">
+        <div class="logo" aria-hidden="true" style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg, rgba(34,197,94,.9), rgba(59,130,246,.35));box-shadow:0 10px 30px rgba(0,0,0,.35);"></div>
+        <div>
+          <h1 style="font-size:16px;margin:0;letter-spacing:.2px;">Yann Pasqualini</h1>
+          <p style="margin:0;font-size:12px;color:#9ca3af;">Accompagnateur en montagne & guide-conférencier en Corse</p>
+        </div>
+      </div>
+
+      <div class="menu" style="display:flex;gap:14px;flex-wrap:wrap;font-size:14px;">
+        <a class="link" href="index.html#apropos">À propos</a>
+        <a class="link" href="index.html#infos">Infos pratiques</a>
+        <a class="link" href="sorties.html">Sorties</a>
+        <a class="link" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero" style="padding:26px 0 12px 0;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;">
+      <div>
+        <h2 style="margin:0;font-size:34px;line-height:1.1;letter-spacing:.2px;">Travel Planner Corse<br/>conçu par un guide local</h2>
+
+        <div class="lead" style="color:#9ca3af;font-size:16px;line-height:1.6;margin-top:10px;">
+          Itinéraires sur mesure mêlant randonnée, patrimoine et paysages — un plan jour par jour réaliste,
+          des conseils saisonniers et des repères locaux. Idéal pour voyageurs autonomes, couples, familles et petits groupes.
+        </div>
+
+        <div class="pillrow" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+          <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">FR / EN (UK)</div>
+          <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">Clientèle internationale</div>
+          <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">Randonnée + Patrimoine</div>
+          <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">Logistique réaliste</div>
+          <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">Carnet PDF</div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btnPrimary" href="#formules" style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.18);font-weight:600;font-size:14px;">Choisir une formule</a>
+          <a class="btn" href="index.html#contact" style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-weight:600;font-size:14px;">Poser une question</a>
+        </div>
+
+        <p style="margin-top:10px;font-size:12px;color:#9ca3af;">
+          Basé à Biguglia (près de Bastia). Service disponible à distance (visio).
+        </p>
+      </div>
+
+      <div class="ctaBox" style="border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);border-radius:18px;padding:16px;">
+        <h3 style="margin:0 0 10px 0;font-size:16px;">Démarrage rapide</h3>
+        <p style="margin:0 0 12px 0;color:#9ca3af;font-size:13px;line-height:1.5;">
+          Choisissez votre formule, puis contactez-moi sur WhatsApp. Vous recevrez ensuite le questionnaire de planification
+          et les prochaines étapes. (Stripe arrive bientôt.)
+        </p>
+
+        <div class="btnRow" style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btnPrimary"
+             href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20le%20Travel%20Planner%20CORSE%20-%20ESSENTIEL.%0AMes%20dates%20%3A%20...%0ANombre%20de%20personnes%20%3A%20...%0AType%20de%20s%C3%A9jour%20%3A%20rando%20%2F%20culture%20%2F%20mixte.%0AMerci%20!"
+             target="_blank" rel="noopener"
+             style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.18);font-weight:600;font-size:14px;">
+             WhatsApp Essentiel
+          </a>
+
+          <a class="btn btnPrimary"
+             href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20le%20Travel%20Planner%20CORSE%20-%20PREMIUM.%0AMes%20dates%20%3A%20...%0ANombre%20de%20personnes%20%3A%20...%0AType%20de%20s%C3%A9jour%20%3A%20rando%20%2F%20culture%20%2F%20mixte.%0AMerci%20!"
+             target="_blank" rel="noopener"
+             style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.18);font-weight:600;font-size:14px;">
+             WhatsApp Premium
+          </a>
+
+          <a class="btn"
+             href="https://wa.me/33607656427?text=Bonjour%20Yann%2C%20je%20souhaite%20r%C3%A9server%20le%20Travel%20Planner%20CORSE%20-%20GROUPE%20%2F%20TREK.%0AMes%20dates%20%3A%20...%0ANombre%20de%20personnes%20%3A%20...%0AType%20de%20s%C3%A9jour%20%3A%20club%20%2F%20trek%20%2F%20itin%C3%A9rance.%0AMerci%20!"
+             target="_blank" rel="noopener"
+             style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-weight:600;font-size:14px;">
+             WhatsApp Groupe/Trek
+          </a>
+        </div>
+
+        <p style="margin-top:12px;font-size:12px;color:#9ca3af;">
+          Ensuite : questionnaire → (visio si Premium/Groupe) → carnet PDF.
+        </p>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <div class="section" style="padding:16px 0;">
+      <h3 style="margin:0 0 8px 0;font-size:20px;">Pourquoi travailler avec Yann ?</h3>
+      <p style="margin:0 0 10px 0;color:#9ca3af;line-height:1.65;">
+        Vous bénéficiez des conseils d’un professionnel du terrain — pas d’un contenu générique.
+        Je vous aide à construire un plan adapté à votre niveau, à la saison, aux conditions et aux temps de route réels en Corse.
+      </p>
+
+      <div class="grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div class="card" style="border:1px solid rgba(_toggle,var(--border),rgba(255,255,255,.08));border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Expertise locale</b>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Expérience terrain en Corse</li>
+            <li>Itinéraires adaptés aux saisons</li>
+            <li>Conseils honnêtes (réaliste / non réaliste)</li>
+          </ul>
+        </div>
+        <div class="card" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Randonnée + patrimoine</b>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Villages, tours, églises : repères et explications</li>
+            <li>Points de vue & routes panoramiques</li>
+            <li>Équilibre nature, culture et repos</li>
+          </ul>
+        </div>
+        <div class="card" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Livrables clairs</b>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Itinéraire jour par jour</li>
+            <li>Carnet PDF personnalisé</li>
+            <li>Alternatives météo & ajustements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="section" id="formules" style="padding:16px 0;">
+      <h3 style="margin:0 0 8px 0;font-size:20px;">Formules</h3>
+      <p style="margin:0 0 10px 0;color:#9ca3af;line-height:1.65;">
+        Choisissez le niveau d’accompagnement. Toutes les formules sont conçues pour des voyages autonomes (auto-guidés).
+      </p>
+
+      <div class="grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div class="card" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Essentiel</b>
+          <div style="font-size:22px;font-weight:800;margin:6px 0 10px 0;">59 €</div>
+          <p style="font-size:12px;color:#9ca3af;margin:0;">Itinéraire personnalisé (sans visio).</p>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Questionnaire détaillé</li>
+            <li>Itinéraire 5–7 jours (ou selon votre durée)</li>
+            <li>Suggestions rando + culture</li>
+            <li>Conseils pratiques & saisonnalité</li>
+            <li>Carnet PDF (env. 15–20 pages)</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Premium</b>
+          <div style="font-size:22px;font-weight:800;margin:6px 0 10px 0;">119 €</div>
+          <p style="font-size:12px;color:#9ca3af;margin:0;">Inclut une visio d’1h.</p>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Visio 1h (planification + Q/R)</li>
+            <li>Itinéraire détaillé jour par jour</li>
+            <li>Logistique réaliste & temps de route</li>
+            <li>Patrimoine + randonnée adaptés</li>
+            <li>Carnet PDF + alternatives</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);">
+          <b>Groupe / Trek</b>
+          <div style="font-size:22px;font-weight:800;margin:6px 0 10px 0;">199–249 €</div>
+          <p style="font-size:12px;color:#9ca3af;margin:0;">Clubs, itinérance, GR, multi-jours.</p>
+          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+            <li>Itinéraire multi-jours & étapes</li>
+            <li>Préparation sécurité & saisonnalité</li>
+            <li>Logique effort / dénivelé</li>
+            <li>Logistique + plans B</li>
+            <li>Visio incluse si nécessaire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" style="padding:18px 0 28px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:20px;color:#9ca3af;font-size:13px;">
+      © <span id="y"></span> Yann Pasqualini — Biguglia, Corse.
+      <div style="margin-top:6px;font-size:12px;">
+        Téléphone / WhatsApp : +33 6 07 65 64 27 · <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div class="hero">
-<h1>Travel Planner Corse — conçu par un guide local</h1>
-<p>
-Itinéraires sur mesure mêlant randonnée, patrimoine et paysages.  
-Un carnet clair, réaliste et personnalisé pour préparer votre séjour en Corse.
-</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h2>Essentiel — 59 €</h2>
-<p>Itinéraire personnalisé sans visio.</p>
-</div>
-
-<div class="card">
-<h2>Premium — 119 €</h2>
-<p>Itinéraire + visio 1h + carnet complet.</p>
-</div>
-
-<div class="card">
-<h2>Groupe / Trek — 199–249 €</h2>
-<p>Clubs, itinérance, GR, multi-jours.</p>
-</div>
-
-</div>
-
-</div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
