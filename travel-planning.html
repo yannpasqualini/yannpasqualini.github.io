@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Corsica Travel Planner | Yann Pasqualini</title>
+  <meta name="description" content="Plan your Corsican trip with a local mountain guide and heritage guide. Tailor-made itineraries for hikers and travellers: routes, hikes, culture, logistics and seasonal advice." />
+
+  <link rel="canonical" href="https://yannpasqualini.github.io/travel-planning.html" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://yannpasqualini.github.io/travel-planning.html" />
+  <link rel="alternate" hreflang="fr" href="https://yannpasqualini.github.io/planification-voyage.html" />
+  <link rel="alternate" hreflang="x-default" href="https://yannpasqualini.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Corsica Travel Planner | Yann Pasqualini" />
+  <meta property="og:description" content="Tailor-made itineraries combining hiking, heritage and landscapes — designed by a local guide based in Corsica." />
+  <meta property="og:url" content="https://yannpasqualini.github.io/travel-planning.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Yann Pasqualini" />
+  <!-- IMPORTANT: use a GitHub Pages URL (not raw.githubusercontent.com) -->
+  <meta property="og:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Corsica Travel Planner | Yann Pasqualini" />
+  <meta name="twitter:description" content="Plan your Corsican trip with a local mountain guide and heritage guide: hikes, culture, logistics and seasonal advice." />
+  <meta name="twitter:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Yann Pasqualini",
+    "description": "Mountain guide and heritage guide in Corsica. Tailor-made hikes and travel planning for international travellers.",
+    "url": "https://yannpasqualini.github.io/",
+    "telephone": "+33607656427",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "267 route de Pétrèle",
+      "postalCode": "20620",
+      "addressLocality": "Biguglia",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Corsica",
+    "knowsLanguage": ["en","fr"],
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/aspassu_yannpasqualini/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111827;
+      --muted:#9ca3af;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --border:rgba(255,255,255,.08);
+    }
+    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: 1080px; margin:0 auto; padding: 18px; }
+    .nav{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding: 10px 0 18px 0; border-bottom:1px solid var(--border);
+    }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(34,197,94,.9), rgba(59,130,246,.35));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .brand h1{ font-size:16px; margin:0; letter-spacing:.2px; }
+    .brand p{ margin:0; font-size:12px; color:var(--muted); }
+    .menu{ display:flex; gap:14px; flex-wrap:wrap; font-size:14px; }
+    .menu a{ padding:8px 10px; border-radius:10px; border:1px solid transparent; }
+    .menu a:hover{ border-color: var(--border); background: rgba(255,255,255,.03); }
+
+    .hero{ padding: 26px 0 12px 0; display:grid; grid-template-columns: 1.25fr .75fr; gap:18px; }
+    .hero h2{ margin:0; font-size:34px; line-height:1.1; letter-spacing:.2px; }
+    .hero .lead{ color:var(--muted); font-size:16px; line-height:1.6; margin-top:10px; }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .pill{ font-size:12px; color:var(--text); border:1px solid var(--border); padding:8px 10px; border-radius:999px; background: rgba(255,255,255,.02); }
+
+    .ctaBox{
+      border:1px solid var(--border); background: rgba(255,255,255,.03);
+      border-radius:18px; padding:16px;
+    }
+    .ctaBox h3{ margin:0 0 10px 0; font-size:16px; }
+    .ctaBox p{ margin:0 0 12px 0; color:var(--muted); font-size:13px; line-height:1.5; }
+    .btn{
+      display:inline-block; padding:12px 14px; border-radius:14px;
+      border:1px solid var(--border); background: rgba(255,255,255,.04);
+      font-weight:600; font-size:14px;
+    }
+    .btnPrimary{ background: rgba(34,197,94,.18); border-color: rgba(34,197,94,.35); }
+    .btnRow{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .section{ padding: 16px 0; }
+    .section h3{ margin:0 0 8px 0; font-size:20px; }
+    .section p{ margin:0 0 10px 0; color:var(--muted); line-height:1.65; }
+
+    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+    .card{
+      border:1px solid var(--border); background: rgba(255,255,255,.03);
+      border-radius:18px; padding:16px;
+    }
+    .price{ font-size:22px; font-weight:800; margin:6px 0 10px 0; }
+    ul{ margin: 8px 0 0 18px; color:var(--muted); line-height:1.6; }
+    .small{ font-size:12px; color: var(--muted); }
+
+    .how{ display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; }
+    .step{ border:1px solid var(--border); border-radius:16px; padding:12px; background: rgba(255,255,255,.02); }
+    .step b{ display:block; margin-bottom:6px; }
+    .footer{ padding: 18px 0 28px 0; border-top:1px solid var(--border); margin-top: 20px; color:var(--muted); font-size:13px; }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .how{ grid-template-columns: 1fr; }
+      .hero h2{ font-size:30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- NAV -->
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Yann Pasqualini</h1>
+          <p>Mountain guide & heritage guide in Corsica</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="index-en.html#apropos">About</a>
+        <a href="index-en.html#infos">Practical</a>
+        <a href="sorties-en.html">Hikes</a>
+        <a href="index-en.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h2>Corsica Travel Planner<br/>Designed by a local guide</h2>
+        <div class="lead">
+          Tailor-made itineraries combining hiking, heritage and landscapes — realistic day-by-day plans,
+          seasonal advice and local insights. Ideal for independent travellers, couples, families and small groups.
+        </div>
+
+        <div class="pillrow">
+          <div class="pill">UK English</div>
+          <div class="pill">International travellers</div>
+          <div class="pill">Hiking + Heritage</div>
+          <div class="pill">Realistic logistics</div>
+          <div class="pill">PDF travel booklet</div>
+        </div>
+
+        <div style="margin-top:16px" class="btnRow">
+          <a class="btn btnPrimary" href="#packages">Choose a package</a>
+          <a class="btn" href="index-en.html#contact">Ask a question</a>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          Based in Biguglia (near Bastia). Service available worldwide by video call.
+        </p>
+      </div>
+
+      <div class="ctaBox">
+        <h3>Fast start</h3>
+        <p>
+          Choose your package, pay online, complete the questionnaire and receive your personalised PDF.
+          Premium packages include a 1-hour video call.
+        </p>
+
+        <div class="btnRow">
+          <!-- Replace with your Stripe payment links -->
+          <a class="btn btnPrimary" href="https://YOUR-STRIPE-LINK-ESSENTIAL" target="_blank" rel="noopener">Pay Essential</a>
+          <a class="btn btnPrimary" href="https://YOUR-STRIPE-LINK-PREMIUM" target="_blank" rel="noopener">Pay Premium</a>
+          <a class="btn" href="https://YOUR-STRIPE-LINK-GROUP" target="_blank" rel="noopener">Pay Group/Trek</a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          After payment, you’ll be redirected (or emailed) to the planning questionnaire.
+        </p>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <div class="section">
+      <h3>Why work with Yann?</h3>
+      <p>
+        You get advice from a professional who works in the field year-round — not generic blog content.
+        I help you build a plan that fits your pace, the season, the weather patterns and the real driving times in Corsica.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <b>Local expertise</b>
+          <ul>
+            <li>Based in Corsica, real terrain experience</li>
+            <li>Routes adapted to seasons & conditions</li>
+            <li>Honest advice (what’s realistic / what isn’t)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Hiking + heritage</b>
+          <ul>
+            <li>Villages, towers, churches & history explained</li>
+            <li>Best viewpoints and scenic drives</li>
+            <li>Balance nature, culture and rest</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Clear deliverables</b>
+          <ul>
+            <li>Day-by-day itinerary</li>
+            <li>Personalised PDF booklet</li>
+            <li>Alternatives for weather & energy levels</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="section" id="packages">
+      <h3>Packages</h3>
+      <p>Choose the level of support you need. All packages are designed for independent, self-guided travel.</p>
+
+      <div class="grid">
+        <div class="card">
+          <b>Essential</b>
+          <div class="price">€59</div>
+          <p class="small">Personalised itinerary (no video call).</p>
+          <ul>
+            <li>Detailed questionnaire</li>
+            <li>5–7 day plan (or your preferred length)</li>
+            <li>Hiking suggestions + cultural highlights</li>
+            <li>Seasonal / practical advice</li>
+            <li>PDF booklet (approx. 15–20 pages)</li>
+          </ul>
+          <div style="margin-top:12px">
+            <a class="btn btnPrimary" href="https://YOUR-STRIPE-LINK-ESSENTIAL" target="_blank" rel="noopener">Book Essential</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <b>Premium</b>
+          <div class="price">€119</div>
+          <p class="small">Best value: includes a 1-hour video call.</p>
+          <ul>
+            <li>1-hour video call (planning + Q&A)</li>
+            <li>Detailed day-by-day itinerary</li>
+            <li>Hiking + heritage tailored to your level</li>
+            <li>Realistic logistics & driving times</li>
+            <li>PDF travel booklet + alternatives</li>
+          </ul>
+          <div style="margin-top:12px">
+            <a class="btn btnPrimary" href="https://YOUR-STRIPE-LINK-PREMIUM" target="_blank" rel="noopener">Book Premium</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <b>Group / Trek</b>
+          <div class="price">€199–€249</div>
+          <p class="small">For clubs, small groups, multi-day routes and trekking plans.</p>
+          <ul>
+            <li>Multi-day itinerary & stages</li>
+            <li>Safety & seasonal planning</li>
+            <li>Elevation / effort logic</li>
+            <li>Logistics and contingency options</li>
+            <li>Optional video call (included if needed)</li>
+          </ul>
+          <div style="margin-top:12px">
+            <a class="btn" href="https://YOUR-STRIPE-LINK-GROUP" target="_blank" rel="noopener">Book Group/Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        Need a custom scope (very short trip, 2+ weeks, special interests)? Use the contact form and I’ll suggest the best option.
+      </p>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="section">
+      <h3>How it works</h3>
+      <div class="how">
+        <div class="step"><b>1) Choose</b><span class="small">Select Essential, Premium or Group/Trek.</span></div>
+        <div class="step"><b>2) Pay online</b><span class="small">Secure payment via Stripe/PayPal.</span></div>
+        <div class="step"><b>3) Questionnaire</b><span class="small">Tell me your dates, level, interests, constraints.</span></div>
+        <div class="step"><b>4) Video call</b><span class="small">Premium/Group: 1-hour call if included.</span></div>
+        <div class="step"><b>5) Delivery</b><span class="small">You receive your personalised PDF booklet.</span></div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <h3>Quick FAQ</h3>
+      <div class="grid">
+        <div class="card">
+          <b>Is this a guided hike?</b>
+          <p class="small" style="margin-top:8px;">
+            No — this is travel planning for self-guided trips. If you want a guided hike, please see the Hikes page.
+          </p>
+        </div>
+        <div class="card">
+          <b>How fast will I receive my plan?</b>
+          <p class="small" style="margin-top:8px;">
+            Typical delivery depends on season and workload. If you have a tight deadline, tell me before booking.
+          </p>
+        </div>
+        <div class="card">
+          <b>Can you plan culture-only trips?</b>
+          <p class="small" style="margin-top:8px;">
+            Yes — heritage routes, historic towns, villages, museums and coastal towers can be a full itinerary.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="section">
+      <div class="card">
+        <h3 style="margin:0 0 6px 0;">Ready to start planning?</h3>
+        <p style="margin:0 0 12px 0;">
+          Choose your package and get a clear, realistic Corsican itinerary designed by a local guide.
+        </p>
+        <div class="btnRow">
+          <a class="btn btnPrimary" href="#packages">Choose a package</a>
+          <a class="btn" href="index-en.html#contact">Contact</a>
+          <a class="btn" href="sorties-en.html">See guided hikes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica.
+      <div class="small" style="margin-top:6px;">
+        Phone/WhatsApp: +33 6 07 65 64 27 · <a href="index-en.html#contact">Contact</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
