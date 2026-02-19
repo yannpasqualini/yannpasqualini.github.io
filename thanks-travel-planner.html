@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you — Travel Planner Corsica | Yann Pasqualini</title>
+  <meta name="description" content="Payment confirmation — next steps for your Travel Planner Corsica request." />
+  <link rel="canonical" href="https://yannpasqualini.github.io/thanks-travel-planner.html" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --muted:#9ca3af;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --border:rgba(255,255,255,.08);
+    }
+    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    a{ color:inherit; }
+    .wrap{ max-width: 920px; margin:0 auto; padding: 24px 18px; }
+    .card{
+      border:1px solid var(--border); background: rgba(255,255,255,.03);
+      border-radius:18px; padding:18px;
+    }
+    h1{ margin:0 0 6px 0; font-size:28px; }
+    p{ margin:10px 0; color:var(--muted); line-height:1.65; }
+    .ok{ display:inline-flex; align-items:center; gap:10px; margin:10px 0 0 0; }
+    .dot{ width:10px; height:10px; border-radius:999px; background: rgba(34,197,94,.9); box-shadow: 0 0 0 4px rgba(34,197,94,.12); }
+    .btnRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn{
+      display:inline-block; padding:12px 14px; border-radius:14px;
+      border:1px solid var(--border); background: rgba(255,255,255,.04);
+      font-weight:700; text-decoration:none;
+    }
+    .btnPrimary{ background: rgba(34,197,94,.18); border-color: rgba(34,197,94,.35); }
+    .small{ font-size:12px; color:var(--muted); margin-top:12px; }
+    .footer{ margin-top:18px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Thank you — payment received</h1>
+      <div class="ok"><span class="dot"></span><span style="color:var(--muted)">Your Travel Planner request has been registered.</span></div>
+
+      <p><b>Next step:</b> please fill in the questionnaire so I can build your personalised PDF itinerary.</p>
+
+      <p>
+        <b>Start now (recommended):</b> complete the form here:
+        <br/>
+        <a class="btn btnPrimary"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfdajnOvK0xdD9HG9vcQr4pK9bR0Qv5FuRnjm6DlamC2zXGHw/viewform?usp=header"
+           target="_blank" rel="noopener">Open questionnaire (EN)</a>
+      </p>
+
+      <p>
+        <b>If you prefer WhatsApp:</b> message me with
+        <br/>• your dates • number of travellers • arrival airport • your goal (hiking / heritage / mix).
+      </p>
+
+      <div class="btnRow">
+        <a class="btn" href="https://wa.me/33607656427" target="_blank" rel="noopener">Open WhatsApp</a>
+        <a class="btn" href="travel-planning.html">Back to Travel Planner</a>
+        <a class="btn" href="index-en.html#contact">Contact</a>
+      </div>
+
+      <p class="small">
+        <b>Important:</b> this is a <b>travel planning service</b> for independent (self-guided) trips. In the mountains, conditions and trails can change:
+        always adapt your plan to the weather, your level, and local recommendations.
+      </p>
+
+      <div class="footer">
+        © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica · Tel/WhatsApp: +33 6 07 65 64 27
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
