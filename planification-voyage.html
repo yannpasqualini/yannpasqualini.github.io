@@ -59,6 +59,20 @@
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
     .card{border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);}
     @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+    @media (max-width:900px){
+  .btnRow{ grid-template-columns:1fr !important; }
+}
+    .btnRow{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+@media(max-width:900px){
+  .btnRow{
+    grid-template-columns:1fr;
+  }
+}
   </style>
 </head>
 
@@ -115,7 +129,7 @@ style="display:inline-block;padding:12px 14px;border-radius:14px;border:1px soli
         </p>
       </div>
 
-     <div class="btnRow" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+     <div class="btnRow">
 
   <a class="btn btnPrimary"
      href="https://buy.stripe.com/test_cNi6oGgZR7qh4oHeqD0Fi00"
