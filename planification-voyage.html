@@ -73,6 +73,54 @@
     grid-template-columns:1fr;
   }
 }
+    /* ===== Travel Planner Hero ===== */
+
+.tp-hero {
+  position: relative;
+  min-height: 80vh;
+  background-image: url("images/images/images/corse-travel-planner-hero.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.tp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+.tp-hero-content {
+  position: relative;
+  max-width: 800px;
+  z-index: 2;
+}
+
+.tp-hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.tp-hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.tp-cta {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #ffd26e, #c58624);
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+}
   </style>
 </head>
 
@@ -97,18 +145,17 @@
         <a class="link" href="travel-planning.html">EN</a>
       </div>
     </div>
+<section class="tp-hero">
+  <div class="tp-hero-overlay"></div>
 
-    <!-- HERO -->
-    <div class="hero" style="padding:26px 0 12px 0;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;">
-      <div>
-        <h1 style="margin:0;font-size:34px;line-height:1.1;letter-spacing:.2px;">
-  Travel Planner Corse<br/>par un expert local
-</h1>
+  <div class="tp-hero-content">
+    <h1>Travel Planner Corse par un expert local</h1>
+    <p>Itinéraire sur mesure en PDF (jour par jour), réaliste et adapté à la saison : rando, patrimoine, paysages et logistique.</p>
 
-<div class="lead" style="color:#9ca3af;font-size:16px;line-height:1.6;margin-top:10px;">
-  Conception stratégique d’itinéraire en Corse : un carnet PDF jour par jour, réaliste et adapté à la saison
-  (randonnée, patrimoine, paysages, temps de route). Pour voyageurs autonomes, couples, familles et petits groupes.
-</div>
+    <a class="tp-cta" href="#packages">Choisir une formule</a>
+  </div>
+</section>    <!-- HERO -->
+    
 
         <div class="pillrow" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
           <div class="pill" style="font-size:12px;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.02);">FR / EN (UK)</div>
