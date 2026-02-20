@@ -21,6 +21,33 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:site_name" content="Yann Pasqualini" />
+  <meta property="og:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Corsica Travel Planner | Yann Pasqualini" />
+  <meta name="twitter:description" content="A realistic day-by-day Corsica itinerary: hiking, heritage, scenery & logistics adapted to the season." />
+  <meta name="twitter:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Yann Pasqualini",
+    "description": "Corsica travel planner and mountain professional. Bespoke itineraries combining hiking, heritage and realistic logistics.",
+    "url": "https://yannpasqualini.github.io/",
+    "telephone": "+33607656427",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "267 route de Pétrèle",
+      "postalCode": "20620",
+      "addressLocality": "Biguglia",
+      "addressCountry": "FR"
+    },
+    "knowsLanguage": ["fr","en"]
+  }
+  </script>
 
   <style>
     :root{
@@ -28,12 +55,18 @@
       --text:#e5e7eb;
       --muted:#9ca3af;
       --border:rgba(255,255,255,.10);
+      --cardbg:rgba(255,255,255,.03);
+      --gold1:#f4d07a;
+      --gold2:#c79a38;
     }
     html,body{margin:0;padding:0;}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
     a{color:inherit;text-decoration:none;}
 
     .wrap{max-width:1080px;margin:0 auto;padding:18px;}
+    .container{width:min(980px, 100%); margin:0 auto; padding:0 16px;}
+
+    /* NAV */
     .nav{
       display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
       padding:10px 0 18px 0;border-bottom:1px solid rgba(255,255,255,.08);
@@ -44,8 +77,9 @@
       background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(59,130,246,.38));
       display:flex;align-items:center;justify-content:center;
       font-weight:900;color:#07110a;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    .brandTitle{font-size:16px;margin:0;}
+    .brandTitle{font-size:16px;margin:0;letter-spacing:.2px;}
     .brandSub{margin:0;font-size:12px;color:var(--muted);}
     .menu{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;}
 
@@ -53,6 +87,7 @@
     .tp-hero{
       position:relative;
       min-height:78vh;
+      max-height:820px;
       display:flex;
       align-items:flex-end;
       padding:28px 16px 22px;
@@ -71,51 +106,82 @@
       margin:0 0 10px;
       font-size:clamp(34px, 5vw, 54px);
       line-height:1.05;
+      letter-spacing:-.02em;
       color:#fff;
     }
     .tp-hero__subtitle{
       margin:0 0 16px;
       color:rgba(255,255,255,.88);
       font-size:clamp(15px, 2.1vw, 18px);
+      line-height:1.45;
       max-width:60ch;
     }
     .tp-hero__cta{
       display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:14px 18px;
       border-radius:999px;
+      text-decoration:none;
       font-weight:800;
       color:#1b1205;
-      background:linear-gradient(180deg,#f4d07a,#c79a38);
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      box-shadow:0 14px 34px rgba(0,0,0,.35);
     }
-
     .tp-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
     .tp-chip{
+      display:inline-flex;
       padding:8px 12px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(0,0,0,.28);
+      color:rgba(255,255,255,.9);
       font-size:13px;
+      backdrop-filter: blur(6px);
     }
 
+    /* SECTION TITLES */
     .tp-section{ width:min(980px, 100%); margin:26px auto 0; padding:0 16px; }
+    .tp-section__title{
+      margin:0 0 6px;
+      font-size:clamp(22px, 3.2vw, 30px);
+      color:#eaeaea;
+    }
+    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.5; }
+
+    /* PACK GRID */
     .tp-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
     }
-    @media(max-width:900px){ .tp-grid{grid-template-columns:1fr;} }
+    @media (max-width:980px){
+      .tp-grid{ grid-template-columns:repeat(2, 1fr); }
+    }
+    @media (max-width:560px){
+      .tp-grid{ grid-template-columns:1fr; }
+      .tp-hero{ min-height:72vh; border-radius:0; }
+      .wrap{padding:0;}
+      .nav{padding:16px 16px 18px;}
+    }
 
     .tp-card{
       display:flex;
       flex-direction:column;
       gap:10px;
       padding:14px;
+      text-decoration:none;
       border-radius:16px;
-      border:1px solid var(--border);
+      border:1px solid rgba(255,255,255,.10);
       background:rgba(20,26,22,.78);
+      box-shadow:0 18px 50px rgba(0,0,0,.35);
+      transition:transform .12s ease, border-color .12s ease, filter .12s ease;
     }
-    .tp-card__top{display:flex;justify-content:space-between;}
-    .tp-card__price{color:#f4d07a;font-weight:900;}
+    .tp-card:hover{ transform:translateY(-2px); border-color:rgba(244,208,122,.35); }
+    .tp-card__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .tp-card__badge{ font-weight:900; color:#fff; letter-spacing:.01em; }
+    .tp-card__price{ font-weight:900; color:var(--gold1); font-size:20px; }
+    .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.35; min-height:34px; }
     .tp-card__btn{
       margin-top:auto;
       display:flex;
@@ -125,27 +191,74 @@
       border-radius:12px;
       font-weight:900;
       color:#1b1205;
-      background:linear-gradient(180deg,#f4d07a,#c79a38);
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
     }
 
-    .tp-details{
+    .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; }
+
+    /* WHY + DETAILS */
+    .grid3{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(3, 1fr);
       gap:14px;
-      margin-top:20px;
+      width:min(980px,100%);
+      margin:0 auto;
+      padding:0 16px;
     }
-    @media(max-width:900px){ .tp-details{grid-template-columns:1fr;} }
+    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
 
-    .tp-detailCard{
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:14px;
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(255,255,255,.03);
+      box-shadow:0 18px 50px rgba(0,0,0,.25);
+    }
+    .card b{display:block;margin-bottom:6px;}
+    .card ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.6;}
+    .leadText{
+      width:min(980px,100%);
+      margin:0 auto;
+      padding:0 16px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .details{
+      width:min(980px,100%);
+      margin:14px auto 0;
+      padding:0 16px;
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+    }
+    @media(max-width:980px){ .details{grid-template-columns:1fr;} }
+
+    .detailCard{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:16px;
       background:rgba(255,255,255,.03);
     }
+    .detailHead{
+      display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+      margin-bottom:8px;
+    }
+    .detailHead .price{color:var(--gold1);font-weight:900;}
+    .detailCard p{margin:6px 0 0;color:var(--muted);line-height:1.55;}
+    .detailCard ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.6;}
+    .divider{
+      width:min(980px,100%);
+      margin:22px auto 0;
+      padding:0 16px;
+      border-top:1px solid rgba(255,255,255,.08);
+      opacity:.9;
+    }
 
+    /* FOOTER */
     .footer{
       width:min(980px,100%);
-      margin:22px auto;
+      margin:16px auto 0 auto;
       padding:18px 16px 28px 16px;
       border-top:1px solid rgba(255,255,255,.08);
       color:#9ca3af;
@@ -156,102 +269,222 @@
 
 <body>
 
-<div class="wrap">
-  <div class="nav">
-    <div class="brand">
-      <div class="brandLogo">YP</div>
-      <div>
-        <h1 class="brandTitle">Yann Pasqualini</h1>
-        <p class="brandSub">Corsica Travel Planner — bespoke itineraries (FR / UK English)</p>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="brandLogo">YP</div>
+        <div>
+          <h1 class="brandTitle">Yann Pasqualini</h1>
+          <p class="brandSub">Corsica Travel Planner — bespoke itineraries (UK English)</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="index-en.html#about">About</a>
+        <a href="index-en.html#practical">Practical</a>
+        <a href="sorties-en.html">Hikes</a>
+        <a href="index-en.html#contact">Contact</a>
+        <a href="planification-voyage.html">FR</a>
       </div>
     </div>
-
-    <div class="menu">
-      <a href="index-en.html#about">About</a>
-      <a href="index-en.html#practical">Practical</a>
-      <a href="sorties-en.html">Hikes</a>
-      <a href="index-en.html#contact">Contact</a>
-      <a href="planification-voyage.html">FR</a>
-    </div>
   </div>
-</div>
 
-<section class="tp-hero">
-  <div class="tp-hero__overlay"></div>
-  <div class="tp-hero__content">
-    <h1 class="tp-hero__title">Plan your trip to Corsica</h1>
-    <p class="tp-hero__subtitle">
-      A realistic day-by-day PDF itinerary adapted to the season: hiking, heritage, scenery & logistics.
+  <!-- HERO -->
+  <section class="tp-hero" aria-label="Corsica Travel Planner">
+    <div class="tp-hero__overlay"></div>
+
+    <header class="tp-hero__content">
+      <h1 class="tp-hero__title">Plan your trip to Corsica</h1>
+      <p class="tp-hero__subtitle">
+        A realistic day-by-day PDF itinerary adapted to the season: hiking, heritage, scenery & logistics.
+      </p>
+      <a class="tp-hero__cta" href="#packages">Choose a package</a>
+
+      <div class="tp-chips" aria-label="Key points">
+        <span class="tp-chip">UK English</span>
+        <span class="tp-chip">International travellers</span>
+        <span class="tp-chip">Hiking + Heritage</span>
+        <span class="tp-chip">Realistic logistics</span>
+        <span class="tp-chip">PDF travel booklet</span>
+      </div>
+
+      <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.8);">
+        Based in Biguglia (near Bastia). Service available worldwide via video call.
+      </p>
+    </header>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="tp-section" aria-label="Packages">
+    <h2 class="tp-section__title">Choose your package</h2>
+    <p class="tp-section__lead">Pay online, then complete the questionnaire. Video call included for Premium / Group.</p>
+
+    <div class="tp-grid">
+      <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Essential</div>
+          <div class="tp-card__price">€59</div>
+        </div>
+        <div class="tp-card__desc">Personalised PDF (no video call)</div>
+        <div class="tp-card__btn">Pay</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Premium</div>
+          <div class="tp-card__price">€119</div>
+        </div>
+        <div class="tp-card__desc">PDF + 1-hour video call</div>
+        <div class="tp-card__btn">Pay</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Group</div>
+          <div class="tp-card__price">€199</div>
+        </div>
+        <div class="tp-card__desc">For multiple travellers + video call</div>
+        <div class="tp-card__btn">Pay</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Structured Trek</div>
+          <div class="tp-card__price">€249</div>
+        </div>
+        <div class="tp-card__desc">Trek stages & optimised route</div>
+        <div class="tp-card__btn">Pay</div>
+      </a>
+    </div>
+
+    <p class="tp-note">Next: questionnaire → (video call if Premium/Group) → PDF travel booklet.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHY WORK WITH YANN -->
+  <section style="margin-top:18px;">
+    <div class="container">
+      <h2 class="tp-section__title">Why work with Yann?</h2>
+    </div>
+
+    <p class="leadText">
+      You get advice from a field professional — not generic content.
+      I help you build a plan that fits your pace, the season, the conditions and the real driving times in Corsica.
     </p>
-    <a class="tp-hero__cta" href="#packages">Choose a package</a>
 
-    <div class="tp-chips">
-      <span class="tp-chip">UK English</span>
-      <span class="tp-chip">International travellers</span>
-      <span class="tp-chip">Hiking + Heritage</span>
-      <span class="tp-chip">Realistic logistics</span>
-      <span class="tp-chip">PDF travel booklet</span>
+    <div class="grid3" style="margin-top:14px;">
+      <div class="card">
+        <b>Local expertise</b>
+        <ul>
+          <li>Based in Corsica, real terrain knowledge</li>
+          <li>Routes adapted to seasons & conditions</li>
+          <li>Honest advice (what’s realistic / what isn’t)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <b>Hiking + heritage</b>
+        <ul>
+          <li>Villages, towers, churches: key points & context</li>
+          <li>Best viewpoints & scenic drives</li>
+          <li>A balance of nature, culture and rest</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <b>Clear deliverables</b>
+        <ul>
+          <li>Day-by-day itinerary</li>
+          <li>Personalised PDF travel booklet</li>
+          <li>Weather alternatives & adjustments</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE DETAILS (IMPORTANT) -->
+  <section style="margin-top:22px;">
+    <div class="container">
+      <h2 class="tp-section__title">What’s included in each package</h2>
+      <p class="tp-section__lead">
+        So you know exactly what you’re paying for — deliverables, depth and level of support.
+      </p>
     </div>
 
-    <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.8);">
-      Based in Biguglia (near Bastia). Service available worldwide via video call.
-    </p>
+    <div class="details">
+      <div class="detailCard">
+        <div class="detailHead">
+          <b>Essential</b>
+          <span class="price">€59</span>
+        </div>
+        <p>For independent travellers who want a realistic plan and the best options, without a video call.</p>
+        <ul>
+          <li>Detailed questionnaire</li>
+          <li>Day-by-day plan for your dates</li>
+          <li>Hikes + heritage suggestions adapted to your level</li>
+          <li>Real driving times, logistics and season advice</li>
+          <li>PDF travel booklet (clear structure)</li>
+        </ul>
+      </div>
+
+      <div class="detailCard">
+        <div class="detailHead">
+          <b>Premium</b>
+          <span class="price">€119</span>
+        </div>
+        <p>Perfect if you want to talk it through and validate choices together before finalising.</p>
+        <ul>
+          <li>1-hour video call (planning + Q&A)</li>
+          <li>More detailed day-by-day itinerary</li>
+          <li>Logistics / timing optimisation</li>
+          <li>Weather alternatives & backup options</li>
+          <li>PDF travel booklet + refinements after the call</li>
+        </ul>
+      </div>
+
+      <div class="detailCard">
+        <div class="detailHead">
+          <b>Group</b>
+          <span class="price">€199</span>
+        </div>
+        <p>For families / friends travelling together: a coherent plan that balances everyone’s pace.</p>
+        <ul>
+          <li>Group constraints & preferences integrated</li>
+          <li>Stage logic: effort / rest / transfers</li>
+          <li>Safety & seasonality adjustments</li>
+          <li>Video call included</li>
+          <li>Structured PDF travel booklet</li>
+        </ul>
+      </div>
+
+      <div class="detailCard">
+        <div class="detailHead">
+          <b>Structured Trek</b>
+          <span class="price">€249</span>
+        </div>
+        <p>For multi-day treks: realistic stages, logistics, and safer alternatives when conditions change.</p>
+        <ul>
+          <li>Optimised stage plan (effort / elevation / time)</li>
+          <li>Logistics: access, supplies, key points</li>
+          <li>Backup routes / contingency ideas</li>
+          <li>Terrain & safety-focused recommendations</li>
+          <li>Video call if needed (case-by-case)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica.
+    <div style="margin-top:6px;font-size:12px;">
+      Phone / WhatsApp: +33 6 07 65 64 27 · <a href="index-en.html#contact">Contact</a>
+    </div>
   </div>
-</section>
 
-<section id="packages" class="tp-section">
-  <h2>Choose your package</h2>
-  <p style="color:var(--muted);">
-    Pay online, then complete the questionnaire. Video call included for Premium / Group.
-  </p>
-
-  <div class="tp-grid">
-    <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank">
-      <div class="tp-card__top">
-        <strong>Essential</strong>
-        <span class="tp-card__price">€59</span>
-      </div>
-      <div>Personalised PDF (no video call)</div>
-      <div class="tp-card__btn">Pay</div>
-    </a>
-
-    <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank">
-      <div class="tp-card__top">
-        <strong>Premium</strong>
-        <span class="tp-card__price">€119</span>
-      </div>
-      <div>PDF + 1-hour video call</div>
-      <div class="tp-card__btn">Pay</div>
-    </a>
-
-    <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank">
-      <div class="tp-card__top">
-        <strong>Group</strong>
-        <span class="tp-card__price">€199</span>
-      </div>
-      <div>For multiple travellers + video call</div>
-      <div class="tp-card__btn">Pay</div>
-    </a>
-
-    <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank">
-      <div class="tp-card__top">
-        <strong>Structured Trek</strong>
-        <span class="tp-card__price">€249</span>
-      </div>
-      <div>Trek stages & optimised route</div>
-      <div class="tp-card__btn">Pay</div>
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica.<br/>
-  Phone / WhatsApp: +33 6 07 65 64 27 · <a href="index-en.html#contact">Contact</a>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
