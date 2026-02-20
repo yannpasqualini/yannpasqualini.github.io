@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Travel Planner Corse | Yann Pasqualini</title>
-  <meta name="description" content="Planifiez votre voyage en Corse avec un guide local : itinéraires sur mesure, randonnées, patrimoine, logistique et conseils saisonniers. Carnet PDF personnalisé." />
+  <meta name="description" content="Planifiez votre voyage en Corse avec un expert local : itinéraires sur mesure, randonnées, patrimoine, logistique et conseils saisonniers. Carnet PDF personnalisé." />
 
   <link rel="canonical" href="https://yannpasqualini.github.io/planification-voyage.html" />
 
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Travel Planner Corse | Yann Pasqualini" />
-  <meta property="og:description" content="Itinéraires sur mesure mêlant randonnée, patrimoine et paysages — conçus par un guide local en Corse." />
+  <meta property="og:description" content="Itinéraires sur mesure mêlant randonnée, patrimoine et paysages — conçus par un expert local en Corse." />
   <meta property="og:url" content="https://yannpasqualini.github.io/planification-voyage.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
@@ -26,7 +26,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Travel Planner Corse | Yann Pasqualini" />
-  <meta name="twitter:description" content="Planification de voyage en Corse : itininéraires sur mesure, randonnées, patrimoine, logistique et conseils saisonniers." />
+  <meta name="twitter:description" content="Planification de voyage en Corse : itinéraires sur mesure, randonnées, patrimoine, logistique et conseils saisonniers." />
   <meta name="twitter:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
 
   <!-- JSON-LD -->
@@ -55,27 +55,31 @@
       --text:#e5e7eb;
       --muted:#9ca3af;
       --border:rgba(255,255,255,.10);
-      --card:rgba(20,26,22,.78);
-      --gold1:#f4d07a;
-      --gold2:#c79a38;
     }
-
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
-    .wrap{max-width:960px;margin:0 auto;padding:18px;}
+    html,body{margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
     a{color:inherit;text-decoration:none;}
 
-    /* NAV */
-    .nav{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;border-bottom:1px solid rgba(255,255,255,.08);}
-    .menu{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;}
-    .menu a{color:var(--text);opacity:.92}
-    .menu a:hover{opacity:1}
-
-    @media (max-width:760px){
-      .nav{flex-direction:column;align-items:flex-start}
-      .menu{gap:10px}
+    .wrap{max-width:1080px;margin:0 auto;padding:18px;}
+    .nav{
+      display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
+      padding:10px 0 18px 0;border-bottom:1px solid rgba(255,255,255,.08);
     }
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brandLogo{
+      width:44px;height:44px;border-radius:12px;flex:0 0 44px;
+      background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(59,130,246,.38));
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;letter-spacing:.5px;color:#07110a;
+    }
+    .brandTitle{font-size:16px;margin:0;letter-spacing:.2px;}
+    .brandSub{margin:0;font-size:12px;color:var(--muted);}
+    .menu{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;align-items:center;justify-content:flex-end;}
+    .menu a{opacity:.95}
+    .menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;}
 
-    /* ====== HERO + PACKAGES ====== */
+    /* ====== HERO + PACKAGES (VERSION “BELLE MISE EN PAGE”) ====== */
     .tp-hero{
       position:relative;
       min-height:78vh;
@@ -88,8 +92,6 @@
       background-image:url("images/images/images/corse-travel-planner-hero.jpg");
       background-size:cover;
       background-position:center 35%;
-      box-shadow:0 18px 60px rgba(0,0,0,.35);
-      margin-top:18px;
     }
     .tp-hero__overlay{
       position:absolute; inset:0;
@@ -119,9 +121,8 @@
       text-decoration:none;
       font-weight:800;
       color:#1b1205;
-      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      background:linear-gradient(180deg,#f4d07a,#c79a38);
       box-shadow:0 14px 34px rgba(0,0,0,.35);
-      transition:transform .12s ease, filter .12s ease;
     }
     .tp-hero__cta:hover{ filter:brightness(1.03); transform:translateY(-1px); }
 
@@ -137,13 +138,13 @@
       backdrop-filter: blur(6px);
     }
 
-    .tp-section{ width:min(980px, 100%); margin:22px auto 0; padding:0 2px; }
+    .tp-section{ width:min(980px, 100%); margin:26px auto 0; padding:0 16px; }
     .tp-section__title{
       margin:0 0 6px;
       font-size:clamp(22px, 3.2vw, 30px);
       color:#eaeaea;
     }
-    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); }
+    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.5; }
 
     .tp-grid{
       display:grid;
@@ -155,7 +156,8 @@
     }
     @media (max-width:560px){
       .tp-grid{ grid-template-columns:1fr; }
-      .tp-hero{ min-height:72vh; border-radius:14px; }
+      .tp-hero{ min-height:72vh; border-radius:0; }
+      .wrap{padding:14px;}
     }
 
     .tp-card{
@@ -165,24 +167,16 @@
       padding:14px;
       text-decoration:none;
       border-radius:16px;
-      border:1px solid var(--border);
-      background:var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(20,26,22,.78);
       box-shadow:0 18px 50px rgba(0,0,0,.35);
-      transition:transform .12s ease, border-color .12s ease;
+      transition:transform .15s ease, border-color .15s ease, filter .15s ease;
     }
     .tp-card:hover{ transform:translateY(-2px); border-color:rgba(244,208,122,.35); }
 
     .tp-card__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
-    .tp-card__badge{
-      font-weight:900;
-      color:#fff;
-      letter-spacing:.01em;
-    }
-    .tp-card__price{
-      font-weight:900;
-      color:var(--gold1);
-      font-size:20px;
-    }
+    .tp-card__badge{ font-weight:900; color:#fff; letter-spacing:.01em; }
+    .tp-card__price{ font-weight:900; color:#f4d07a; font-size:20px; }
     .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.35; min-height:34px; }
 
     .tp-card__btn{
@@ -194,28 +188,62 @@
       border-radius:12px;
       font-weight:900;
       color:#1b1205;
-      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      background:linear-gradient(180deg,#f4d07a,#c79a38);
     }
 
     .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; }
 
-    /* Sections en dessous */
-    .section{ margin-top:26px; }
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-    .card{border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);}
-    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+    /* Bloc “Détails” sous les packages */
+    .tp-details{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width:900px){
+      .tp-details{ grid-template-columns:1fr; }
+    }
+    .tp-detailCard{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:14px;
+    }
+    .tp-detailTitle{margin:0 0 6px;font-weight:900;}
+    .tp-detailText{margin:0 0 10px;color:rgba(255,255,255,.72);line-height:1.5;font-size:13px;}
+    .tp-detailList{margin:0 0 0 18px;color:rgba(255,255,255,.72);line-height:1.6;font-size:13px;}
+
+    /* Section “Pourquoi” */
+    .whyWrap{ width:min(980px, 100%); margin:22px auto 0; padding:0 16px; }
+    .whyTitle{margin:0 0 8px 0;font-size:22px;}
+    .whyLead{margin:0 0 14px 0;color:var(--muted);line-height:1.65;}
+    .whyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:900px){.whyGrid{grid-template-columns:1fr;}}
+    .whyCard{border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:14px;background:rgba(255,255,255,.03);}
+    .whyCard b{display:block;margin-bottom:6px;}
+
+    .footer{
+      width:min(980px, 100%);
+      margin:22px auto 0 auto;
+      padding:18px 16px 28px 16px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:#9ca3af;
+      font-size:13px;
+    }
+    .footer a{ text-decoration:underline; text-underline-offset:4px; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <!-- NAV -->
-    <div class="nav" style="padding:10px 0 18px 0;">
-      <div class="brand" style="display:flex;align-items:center;gap:12px;">
-        <div class="logo" aria-hidden="true" style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg, rgba(34,197,94,.9), rgba(59,130,246,.35));box-shadow:0 10px 30px rgba(0,0,0,.35);"></div>
+    <div class="nav">
+      <div class="brand">
+        <!-- “Logo” simple (même esprit que tes pages randos) -->
+        <div class="brandLogo" aria-hidden="true">YP</div>
         <div>
-          <h1 style="font-size:16px;margin:0;letter-spacing:.2px;">Yann Pasqualini</h1>
-          <p style="margin:0;font-size:12px;color:#9ca3af;">Accompagnateur en montagne & guide-conférencier en Corse</p>
+          <h1 class="brandTitle">Yann Pasqualini</h1>
+          <p class="brandSub">Travel Planner Corse — itinéraires sur mesure (FR / EN UK)</p>
         </div>
       </div>
 
@@ -227,124 +255,175 @@
         <a class="link" href="travel-planning.html">EN</a>
       </div>
     </div>
+  </div>
 
-    <!-- HERO -->
-    <section class="tp-hero" aria-label="Travel Planner Corse">
-      <div class="tp-hero__overlay"></div>
+  <!-- HERO -->
+  <section class="tp-hero" aria-label="Travel Planner Corse">
+    <div class="tp-hero__overlay"></div>
 
-      <header class="tp-hero__content">
-        <h1 class="tp-hero__title">Planifiez votre voyage en Corse</h1>
-        <p class="tp-hero__subtitle">
-          Itinéraire sur mesure en PDF (jour par jour), réaliste et adapté à la saison : rando, patrimoine, paysages & logistique.
-        </p>
-        <a class="tp-hero__cta" href="#tp-packages">Choisir une formule</a>
-
-        <div class="tp-chips" aria-label="Points clés">
-          <span class="tp-chip">FR / EN (UK)</span>
-          <span class="tp-chip">Clientèle internationale</span>
-          <span class="tp-chip">Randonnée + Patrimoine</span>
-          <span class="tp-chip">Logistique réaliste</span>
-          <span class="tp-chip">Carnet PDF</span>
-        </div>
-
-        <p style="margin:14px 0 0;color:rgba(255,255,255,.78);font-size:13px;">
-          Basé à Biguglia (près de Bastia). Service disponible à distance (visio).
-        </p>
-      </header>
-    </section>
-
-    <!-- PACKAGES -->
-    <section id="tp-packages" class="tp-section" aria-label="Formules Travel Planner">
-      <h2 class="tp-section__title">Choisissez votre formule</h2>
-      <p class="tp-section__lead">Payez en ligne, puis accédez au questionnaire. Visio incluse pour Premium / Groupe.</p>
-
-      <div class="tp-grid">
-        <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank" rel="noopener">
-          <div class="tp-card__top">
-            <div class="tp-card__badge">Essentiel</div>
-            <div class="tp-card__price">59 €</div>
-          </div>
-          <div class="tp-card__desc">PDF personnalisé (sans visio)</div>
-          <div class="tp-card__btn">Payer</div>
-        </a>
-
-        <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank" rel="noopener">
-          <div class="tp-card__top">
-            <div class="tp-card__badge">Premium</div>
-            <div class="tp-card__price">119 €</div>
-          </div>
-          <div class="tp-card__desc">PDF + 1h de visio</div>
-          <div class="tp-card__btn">Payer</div>
-        </a>
-
-        <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank" rel="noopener">
-          <div class="tp-card__top">
-            <div class="tp-card__badge">Groupe</div>
-            <div class="tp-card__price">199 €</div>
-          </div>
-          <div class="tp-card__desc">Pour plusieurs personnes + visio</div>
-          <div class="tp-card__btn">Payer</div>
-        </a>
-
-        <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank" rel="noopener">
-          <div class="tp-card__top">
-            <div class="tp-card__badge">Trek structuré</div>
-            <div class="tp-card__price">249 €</div>
-          </div>
-          <div class="tp-card__desc">Itinéraire trek & étapes optimisées</div>
-          <div class="tp-card__btn">Payer</div>
-        </a>
-      </div>
-
-      <p class="tp-note">Ensuite : questionnaire → (visio si Premium/Groupe) → carnet PDF.</p>
-    </section>
-
-    <!-- POURQUOI -->
-    <div class="section">
-      <h3 style="margin:0 0 8px 0;font-size:20px;">Pourquoi travailler avec Yann ?</h3>
-      <p style="margin:0 0 10px 0;color:#9ca3af;line-height:1.65;">
-        Vous bénéficiez des conseils d’un professionnel du terrain — pas d’un contenu générique.
-        Je vous aide à construire un plan adapté à votre rythme, à la saison, aux conditions et aux temps de route réels en Corse.
+    <header class="tp-hero__content">
+      <h1 class="tp-hero__title">Planifiez votre voyage en Corse</h1>
+      <p class="tp-hero__subtitle">
+        Itinéraire sur mesure en PDF (jour par jour), réaliste et adapté à la saison : rando, patrimoine, paysages & logistique.
       </p>
 
-      <div class="grid">
-        <div class="card">
-          <b>Expertise locale</b>
-          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
-            <li>Basé en Corse, vraie expérience terrain</li>
-            <li>Itinéraires adaptés aux saisons & conditions</li>
-            <li>Conseils honnêtes (réaliste / pas réaliste)</li>
-          </ul>
-        </div>
+      <a class="tp-hero__cta" href="#tp-packages">Choisir une formule</a>
 
-        <div class="card">
-          <b>Randonnée + patrimoine</b>
-          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
-            <li>Villages, tours, églises : repères & explications</li>
-            <li>Points de vue & routes panoramiques</li>
-            <li>Équilibre nature, culture et repos</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <b>Livrables clairs</b>
-          <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
-            <li>Itinéraire jour par jour</li>
-            <li>Carnet PDF personnalisé</li>
-            <li>Alternatives météo & ajustements</li>
-          </ul>
-        </div>
+      <div class="tp-chips" aria-label="Points clés">
+        <span class="tp-chip">FR / EN (UK)</span>
+        <span class="tp-chip">Clientèle internationale</span>
+        <span class="tp-chip">Randonnée + Patrimoine</span>
+        <span class="tp-chip">Logistique réaliste</span>
+        <span class="tp-chip">Carnet PDF</span>
       </div>
+
+      <p style="margin:14px 0 0;color:rgba(255,255,255,.78);font-size:13px;">
+        Basé à Biguglia (près de Bastia). Service disponible à distance (visio).
+      </p>
+    </header>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="tp-packages" class="tp-section" aria-label="Formules Travel Planner">
+    <h2 class="tp-section__title">Choisissez votre formule</h2>
+    <p class="tp-section__lead">
+      Payez en ligne, puis accédez au questionnaire. Visio incluse pour <b>Premium</b> / <b>Groupe</b>.
+    </p>
+
+    <div class="tp-grid">
+      <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Essentiel</div>
+          <div class="tp-card__price">59 €</div>
+        </div>
+        <div class="tp-card__desc">PDF personnalisé (sans visio)</div>
+        <div class="tp-card__btn">Payer</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Premium</div>
+          <div class="tp-card__price">119 €</div>
+        </div>
+        <div class="tp-card__desc">PDF + 1h de visio</div>
+        <div class="tp-card__btn">Payer</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Groupe</div>
+          <div class="tp-card__price">199 €</div>
+        </div>
+        <div class="tp-card__desc">Pour plusieurs personnes + visio</div>
+        <div class="tp-card__btn">Payer</div>
+      </a>
+
+      <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank" rel="noopener">
+        <div class="tp-card__top">
+          <div class="tp-card__badge">Trek structuré</div>
+          <div class="tp-card__price">249 €</div>
+        </div>
+        <div class="tp-card__desc">Itinéraire trek & étapes optimisées</div>
+        <div class="tp-card__btn">Payer</div>
+      </a>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer" style="max-width:1080px;margin:20px auto 0 auto;padding:18px 0 28px 0;border-top:1px solid rgba(255,255,255,.08);color:#9ca3af;font-size:13px;">
-      © <span id="y"></span> Yann Pasqualini — Biguglia, Corse.
-      <div style="margin-top:6px;font-size:12px;">
-        Téléphone / WhatsApp : +33 6 07 65 64 27 · <a href="index.html#contact">Contact</a>
+    <p class="tp-note">Ensuite : questionnaire → (visio si Premium/Groupe) → carnet PDF.</p>
+
+    <!-- DÉTAILS (même largeur, sous les packages) -->
+    <div class="tp-details" aria-label="Détails des formules">
+      <div class="tp-detailCard">
+        <h3 class="tp-detailTitle">Essentiel — 59 €</h3>
+        <p class="tp-detailText">Pour un voyage autonome : vous recevez un <b>carnet PDF</b> clair et réaliste, adapté à la saison.</p>
+        <ul class="tp-detailList">
+          <li>Questionnaire détaillé (profil, dates, envies, contraintes)</li>
+          <li>Itinéraire jour par jour + temps de route réalistes</li>
+          <li>Suggestions rando + points patrimoine selon vos goûts</li>
+          <li>Conseils saison / météo + options simples de repli</li>
+          <li>Livraison : <b>48h après réception complète</b> du questionnaire</li>
+        </ul>
+      </div>
+
+      <div class="tp-detailCard">
+        <h3 class="tp-detailTitle">Premium — 119 €</h3>
+        <p class="tp-detailText">Pour un voyage autonome, avec un vrai moment d’échange : <b>PDF + visio 1h</b>.</p>
+        <ul class="tp-detailList">
+          <li>Visio 1h : planification + questions/réponses</li>
+          <li>Itinéraire optimisé (rythme, saisons, logistique)</li>
+          <li>Randonnée + patrimoine + paysages (équilibre)</li>
+          <li>Alternatives météo / ajustements recommandés</li>
+          <li>Livraison : <b>48h après questionnaire</b> (et visio si utile)</li>
+        </ul>
+      </div>
+
+      <div class="tp-detailCard">
+        <h3 class="tp-detailTitle">Groupe — 199 €</h3>
+        <p class="tp-detailText">Pour plusieurs personnes : on sécurise la cohérence du programme (rythme, pauses, logistique).</p>
+        <ul class="tp-detailList">
+          <li>Questionnaire + contraintes du groupe</li>
+          <li>Visio incluse (mise au point + arbitrages)</li>
+          <li>Programme multi-jours cohérent (effort / repos)</li>
+          <li>Options de repli / météo + conseils terrain</li>
+          <li>Carnet PDF structuré (facile à suivre)</li>
+        </ul>
+      </div>
+
+      <div class="tp-detailCard">
+        <h3 class="tp-detailTitle">Trek structuré — 249 €</h3>
+        <p class="tp-detailText">Pour un projet “itinérance/trek” : étapes réalistes, sécurité, logistique, variantes.</p>
+        <ul class="tp-detailList">
+          <li>Découpage d’étapes optimisé (dénivelé / effort)</li>
+          <li>Conseils sécurité & saisonnalité (conditions terrain)</li>
+          <li>Logistique : accès, transferts, points clés</li>
+          <li>Variantes / solutions en cas de météo</li>
+          <li>Visio possible si nécessaire selon le projet</li>
+        </ul>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- POURQUOI -->
+  <section class="whyWrap" aria-label="Pourquoi travailler avec Yann ?">
+    <h2 class="whyTitle">Pourquoi travailler avec Yann ?</h2>
+    <p class="whyLead">
+      Vous bénéficiez des conseils d’un professionnel du terrain — pas d’un contenu générique.
+      Je vous aide à construire un plan adapté à votre rythme, à la saison, aux conditions et aux temps de route réels en Corse.
+    </p>
+
+    <div class="whyGrid">
+      <div class="whyCard">
+        <b>Expertise locale</b>
+        <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+          <li>Basé en Corse, vraie expérience terrain</li>
+          <li>Itinéraires adaptés aux saisons & conditions</li>
+          <li>Conseils honnêtes (réaliste / pas réaliste)</li>
+        </ul>
+      </div>
+
+      <div class="whyCard">
+        <b>Randonnée + patrimoine</b>
+        <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+          <li>Villages, tours, églises : repères & explications</li>
+          <li>Points de vue & routes panoramiques</li>
+          <li>Équilibre nature, culture et repos</li>
+        </ul>
+      </div>
+
+      <div class="whyCard">
+        <b>Livrables clairs</b>
+        <ul style="margin:8px 0 0 18px;color:#9ca3af;line-height:1.6;">
+          <li>Itinéraire jour par jour</li>
+          <li>Carnet PDF personnalisé</li>
+          <li>Alternatives météo & ajustements</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Yann Pasqualini — Biguglia, Corse.<br/>
+    Téléphone / WhatsApp : +33 6 07 65 64 27 · <a href="index.html#contact">Contact</a>
+  </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
