@@ -466,8 +466,70 @@
       .nav-links { 
         display: none;
  }
-}        
-        </style>
+}  
+    /* ===== BURGER (mobile) ===== */
+.burger{
+  display:none;
+  width:44px;
+  height:44px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+
+.burger span{
+  display:block;
+  height:3px;
+  margin:7px 0;
+  border-radius:2px;
+  background: #ffffff; /* blanc */
+}
+
+/* Mobile */
+@media (max-width: 900px){
+
+  /* Le header sert de repère pour placer le burger */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  /* On cache les liens tant que le menu n'est pas ouvert */
+  .nav-links{
+    display:none;
+    position:absolute;
+    top: 70px;           /* ajuste si besoin */
+    right: 16px;
+    left: 16px;          /* menu large, confortable */
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(10,18,35,0.96);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Quand ouvert */
+  .nav-links.open{
+    display:flex;
+  }
+
+  /* On affiche le burger */
+  .burger{
+    display:block;
+    position:absolute;
+    right: 16px;
+    top: 18px;           /* ajuste si besoin */
+  }
+
+  /* Optionnel : espace pour éviter que le burger chevauche */
+  .nav{
+    position: relative;
+    padding-right: 60px;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -481,8 +543,12 @@
     Yann Pasqualini
   </span>
 </div>
-        <button id="burger">menu</button>
-
+        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+        
         <div class="nav-links">
           <a class="link" href="#apropos">À propos</a>
           <a class="link" href="sorties.html">Sorties</a>
@@ -759,8 +825,19 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  burgerBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("open");
+    burgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+</script>
 </body>
 </html>
+
 
 
 
