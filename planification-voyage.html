@@ -58,13 +58,34 @@
       --cardbg:rgba(255,255,255,.03);
       --gold1:#f4d07a;
       --gold2:#c79a38;
+
+      /* ✅ Largeur PC : augmente ici si tu veux (ex: 1240) */
+      --siteMax: 1180px;
     }
     html,body{margin:0;padding:0;}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
     a{color:inherit;text-decoration:none;}
 
-    .wrap{max-width:1080px;margin:0 auto;padding:18px;}
-    .container{width:min(980px, 100%); margin:0 auto; padding:0 16px;}
+    /* Containers */
+    .wrap{max-width:1260px;margin:0 auto;padding:18px;}
+    .container{width:min(var(--siteMax), 100%); margin:0 auto; padding:0 18px;}
+
+    /* ✅ Bands (effet “écrans / chapitres”) */
+    .band{
+      width:100%;
+      padding:74px 0;
+    }
+    .band--soft{ background:rgba(255,255,255,.02); }
+    .band--dark{ background:rgba(0,0,0,.18); }
+    .band--line{ border-top:1px solid rgba(255,255,255,.08); }
+    @media(max-width:560px){
+      .band{ padding:54px 0; }
+      .wrap{padding:0;}
+    }
 
     /* NAV */
     .nav{
@@ -85,21 +106,22 @@
       max-height:820px;
       display:flex;
       align-items:flex-end;
-      padding:28px 16px 22px;
-      border-radius:18px;
+      padding:28px 18px 22px;
+      border-radius:22px;
       overflow:hidden;
       background-image:url("images/images/images/corse-travel-planner-hero.jpg");
       background-size:cover;
       background-position:center 35%;
+      box-shadow:0 22px 70px rgba(0,0,0,.45);
     }
     .tp-hero__overlay{
       position:absolute; inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.72) 10%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.10) 100%);
+      background:linear-gradient(to top, rgba(0,0,0,.74) 10%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.10) 100%);
     }
-    .tp-hero__content{ position:relative; width:min(980px, 100%); margin:0 auto; }
+    .tp-hero__content{ position:relative; width:min(var(--siteMax), 100%); margin:0 auto; }
     .tp-hero__title{
       margin:0 0 10px;
-      font-size:clamp(34px, 5vw, 54px);
+      font-size:clamp(34px, 5vw, 56px);
       line-height:1.05;
       letter-spacing:-.02em;
       color:#fff;
@@ -108,8 +130,8 @@
       margin:0 0 16px;
       color:rgba(255,255,255,.88);
       font-size:clamp(15px, 2.1vw, 18px);
-      line-height:1.45;
-      max-width:70ch;
+      line-height:1.5;
+      max-width:74ch;
     }
     .tp-hero__cta{
       display:inline-flex;
@@ -138,20 +160,69 @@
       backdrop-filter: blur(6px);
     }
 
-    /* SECTION TITLES */
-    .tp-section{ width:min(980px, 100%); margin:26px auto 0; padding:0 16px; }
+    /* Titles */
     .tp-section__title{
-      margin:0 0 6px;
-      font-size:clamp(22px, 3.2vw, 30px);
+      margin:0 0 8px;
+      font-size:clamp(22px, 3.2vw, 32px);
       color:#eaeaea;
+      letter-spacing:-.01em;
     }
-    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.7; }
+    .tp-section__lead{
+      margin:0 0 18px;
+      color:rgba(255,255,255,.72);
+      line-height:1.75;
+      max-width:92ch;
+    }
 
-    /* LEVEL GRID */
+    /* Cards layout */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+      background:rgba(255,255,255,.03);
+      box-shadow:0 18px 50px rgba(0,0,0,.25);
+    }
+    .card b{display:block;margin-bottom:8px;}
+    .card ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.75;}
+    .card p{margin:0;color:var(--muted);line-height:1.8;}
+
+    .leadText{
+      color:var(--muted);
+      line-height:1.9;
+      max-width:100ch;
+      margin:0 0 18px;
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:980px){ .steps{grid-template-columns:1fr;} }
+    .step{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .step b{display:block;margin-bottom:6px;}
+    .step p{margin:0;color:var(--muted);line-height:1.7;font-size:13px;}
+
+    /* Levels */
     .tp-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
+      margin-top:14px;
     }
     @media (max-width:980px){
       .tp-grid{ grid-template-columns:repeat(2, 1fr); }
@@ -159,7 +230,6 @@
     @media (max-width:560px){
       .tp-grid{ grid-template-columns:1fr; }
       .tp-hero{ min-height:72vh; border-radius:0; }
-      .wrap{padding:0;}
       .nav{padding:16px 16px 18px;}
     }
 
@@ -167,9 +237,8 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-      padding:14px;
-      text-decoration:none;
-      border-radius:16px;
+      padding:16px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(20,26,22,.78);
       box-shadow:0 18px 50px rgba(0,0,0,.35);
@@ -179,55 +248,30 @@
     .tp-card__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
     .tp-card__badge{ font-weight:900; color:#fff; letter-spacing:.01em; }
     .tp-card__price{ font-weight:900; color:var(--gold1); font-size:20px; }
-    .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.35; min-height:34px; }
+    .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.5; min-height:34px; }
     .tp-card__btn{
       margin-top:auto;
       display:flex;
       align-items:center;
       justify-content:center;
-      height:42px;
-      border-radius:12px;
+      height:44px;
+      border-radius:14px;
       font-weight:900;
       color:#1b1205;
       background:linear-gradient(180deg,var(--gold1),var(--gold2));
     }
 
-    .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; line-height:1.55; }
-
-    /* GENERIC CARDS */
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      width:min(980px,100%);
-      margin:0 auto;
-      padding:0 16px;
-    }
-    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
-
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:16px;
-      background:rgba(255,255,255,.03);
-      box-shadow:0 18px 50px rgba(0,0,0,.25);
-    }
-    .card b{display:block;margin-bottom:6px;}
-    .card ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.7;}
-    .card p{margin:0;color:var(--muted);line-height:1.75;}
-
-    .leadText{
-      width:min(980px,100%);
-      margin:0 auto;
-      padding:0 16px;
-      color:var(--muted);
-      line-height:1.85;
+    .tp-note{
+      margin:14px 0 0;
+      color:rgba(255,255,255,.65);
+      font-size:13px;
+      line-height:1.65;
+      max-width:100ch;
     }
 
+    /* Details */
     .details{
-      width:min(980px,100%);
-      margin:14px auto 0;
-      padding:0 16px;
+      margin-top:14px;
       display:grid;
       grid-template-columns:repeat(2, 1fr);
       gap:14px;
@@ -237,49 +281,20 @@
     .detailCard{
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
-      padding:16px;
+      padding:18px;
       background:rgba(255,255,255,.03);
     }
     .detailHead{
       display:flex;align-items:baseline;justify-content:space-between;gap:10px;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
     .detailHead .price{color:var(--gold1);font-weight:900;}
-    .detailCard p{margin:6px 0 0;color:var(--muted);line-height:1.75;}
-    .detailCard ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.75;}
-
-    .divider{
-      width:min(980px,100%);
-      margin:22px auto 0;
-      padding:0 16px;
-      border-top:1px solid rgba(255,255,255,.08);
-      opacity:.9;
-    }
-
-    /* METHOD */
-    .steps{
-      width:min(980px,100%);
-      margin:12px auto 0;
-      padding:0 16px;
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:12px;
-    }
-    @media(max-width:980px){ .steps{grid-template-columns:1fr;} }
-    .step{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.03);
-    }
-    .step b{display:block;margin-bottom:6px;}
-    .step p{margin:0;color:var(--muted);line-height:1.6;font-size:13px;}
+    .detailCard p{margin:0;color:var(--muted);line-height:1.85;}
+    .detailCard ul{margin:12px 0 0 18px;color:var(--muted);line-height:1.85;}
 
     /* FAQ */
     .faq{
-      width:min(980px,100%);
-      margin:14px auto 0;
-      padding:0 16px;
+      margin-top:14px;
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:14px;
@@ -288,7 +303,7 @@
     details.faqItem{
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
-      padding:14px;
+      padding:16px;
       background:rgba(255,255,255,.03);
     }
     details.faqItem summary{
@@ -297,13 +312,11 @@
       list-style:none;
     }
     details.faqItem summary::-webkit-details-marker{display:none;}
-    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:13px;}
+    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.8;font-size:13px;}
 
-    /* FOOTER */
+    /* Footer */
     .footer{
-      width:min(980px,100%);
-      margin:16px auto 0 auto;
-      padding:18px 16px 28px 16px;
+      padding:26px 0 34px;
       border-top:1px solid rgba(255,255,255,.08);
       color:#9ca3af;
       font-size:13px;
@@ -315,7 +328,7 @@
 <body>
 
   <div class="wrap">
-    <div class="nav">
+    <div class="nav container" style="padding-left:18px;padding-right:18px;">
       <div class="brand">
         <img src="images/images/images/logo-travel-planner.png"
              alt="Yann Pasqualini Travel Planner logo"
@@ -362,50 +375,47 @@
     </header>
   </section>
 
-  <!-- POURQUOI -->
-  <section style="margin-top:18px;">
+  <!-- BAND 1 : POURQUOI -->
+  <section class="band band--soft band--line">
     <div class="container">
       <h2 class="tp-section__title">Pourquoi me confier votre voyage ?</h2>
-    </div>
 
-    <p class="leadText">
-      Vous n’avez pas besoin d’un itinéraire “Pinterest”. Vous avez besoin d’un plan <b>réaliste</b>,
-      adapté à votre <b>rythme</b>, à la <b>saison</b>, et aux <b>temps de route réels</b> en Corse.
-      Mon rôle : vous faire gagner du temps, éviter les erreurs classiques, et construire un séjour fluide et cohérent.
-    </p>
+      <p class="leadText">
+        Vous n’avez pas besoin d’un itinéraire “Pinterest”. Vous avez besoin d’un plan <b>réaliste</b>,
+        adapté à votre <b>rythme</b>, à la <b>saison</b>, et aux <b>temps de route réels</b> en Corse.
+        Mon rôle : vous faire gagner du temps, éviter les erreurs classiques, et construire un séjour fluide et cohérent.
+      </p>
 
-    <div class="grid3" style="margin-top:14px;">
-      <div class="card">
-        <b>Expertise locale</b>
-        <ul>
-          <li>Basé en Corse : routes, distances, saisons</li>
-          <li>Conseils honnêtes (réaliste / pas réaliste)</li>
-          <li>Alternatives simples si météo / affluence</li>
-        </ul>
+      <div class="grid3">
+        <div class="card">
+          <b>Expertise locale</b>
+          <ul>
+            <li>Basé en Corse : routes, distances, saisons</li>
+            <li>Conseils honnêtes (réaliste / pas réaliste)</li>
+            <li>Alternatives simples si météo / affluence</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Votre voyage ≠ “que de la rando”</b>
+          <ul>
+            <li>Road trip, villages, patrimoine, panoramas, plages</li>
+            <li>Famille / couple / amis : rythme adapté</li>
+            <li>Équilibre : nature + culture + repos</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Livrables clairs</b>
+          <ul>
+            <li>Itinéraire jour par jour</li>
+            <li>Carnet PDF personnalisé</li>
+            <li>Options météo & ajustements</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <b>Votre voyage ≠ “que de la rando”</b>
-        <ul>
-          <li>Road trip, villages, patrimoine, panoramas, plages</li>
-          <li>Famille / couple / amis : rythme adapté</li>
-          <li>Équilibre : nature + culture + repos</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <b>Livrables clairs</b>
-        <ul>
-          <li>Itinéraire jour par jour</li>
-          <li>Carnet PDF personnalisé</li>
-          <li>Options météo & ajustements</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- MINI "QUI JE SUIS" (sans photo) -->
-    <div class="container" style="margin-top:14px;">
-      <div class="card">
+      <div class="card" style="margin-top:14px;">
         <b>En bref</b>
         <p>
           Je suis Yann Pasqualini, basé à Biguglia (près de Bastia).
@@ -416,283 +426,286 @@
     </div>
   </section>
 
-  <!-- METHODE -->
-  <section style="margin-top:22px;">
+  <!-- BAND 2 : MÉTHODE -->
+  <section class="band band--dark band--line">
     <div class="container">
       <h2 class="tp-section__title">Ma méthode</h2>
       <p class="tp-section__lead">
         Simple, efficace, humaine — pour un séjour autonome (auto-guidé) bien construit.
       </p>
-    </div>
 
-    <div class="steps">
-      <div class="step">
-        <b>1) Choisir un niveau</b>
-        <p>Niveau d’accompagnement adapté à votre projet (PDF seul, ou PDF + visio).</p>
-      </div>
-      <div class="step">
-        <b>2) Paiement sécurisé</b>
-        <p>Paiement en ligne via Stripe.</p>
-      </div>
-      <div class="step">
-        <b>3) Questionnaire</b>
-        <p>Dates, rythme, envies (culture / rando / road trip), contraintes, priorités.</p>
-      </div>
-      <div class="step">
-        <b>4) Visio si incluse</b>
-        <p>Premium / Groupe : on cadre, on arbitre, on répond à vos questions.</p>
-      </div>
-      <div class="step">
-        <b>5) Livraison PDF</b>
-        <p>Vous recevez votre carnet personnalisé (objectif : 48h après questionnaire complet).</p>
+      <div class="steps">
+        <div class="step">
+          <b>1) Choisir un niveau</b>
+          <p>Niveau d’accompagnement adapté à votre projet (PDF seul, ou PDF + visio).</p>
+        </div>
+        <div class="step">
+          <b>2) Paiement sécurisé</b>
+          <p>Paiement en ligne via Stripe.</p>
+        </div>
+        <div class="step">
+          <b>3) Questionnaire</b>
+          <p>Dates, rythme, envies (culture / rando / road trip), contraintes, priorités.</p>
+        </div>
+        <div class="step">
+          <b>4) Visio si incluse</b>
+          <p>Premium / Groupe : on cadre, on arbitre, on répond à vos questions.</p>
+        </div>
+        <div class="step">
+          <b>5) Livraison PDF</b>
+          <p>Vous recevez votre carnet personnalisé (objectif : 48h après questionnaire complet).</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- BAND 3 : NIVEAUX -->
+  <section class="band band--soft band--line" id="niveaux">
+    <div class="container">
+      <h2 class="tp-section__title">Niveaux d’accompagnement</h2>
+      <p class="tp-section__lead">
+        Des bases tarifaires claires, avec un accompagnement humain.
+        Après paiement : accès au questionnaire → (visio si incluse) → carnet PDF.
+      </p>
 
-  <!-- NIVEAUX -->
-  <section id="niveaux" class="tp-section" aria-label="Niveaux d'accompagnement">
-    <h2 class="tp-section__title">Niveaux d’accompagnement</h2>
-    <p class="tp-section__lead">
-      Des bases tarifaires claires, avec un accompagnement humain.
-      Après paiement : accès au questionnaire → (visio si incluse) → carnet PDF.
-    </p>
+      <div class="tp-grid">
+        <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Niveau 1 — Essentiel</div>
+            <div class="tp-card__price">59 €</div>
+          </div>
+          <div class="tp-card__desc">PDF personnalisé (sans visio)</div>
+          <div class="tp-card__btn">Accéder au niveau 1 →</div>
+        </a>
 
-    <div class="tp-grid">
-      <a class="tp-card" href="https://buy.stripe.com/fZu3cuePh3au80levofEk00" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Niveau 1 — Essentiel</div>
-          <div class="tp-card__price">59 €</div>
-        </div>
-        <div class="tp-card__desc">PDF personnalisé (sans visio)</div>
-        <div class="tp-card__btn">Accéder au niveau 1 →</div>
-      </a>
+        <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Niveau 2 — Premium</div>
+            <div class="tp-card__price">119 €</div>
+          </div>
+          <div class="tp-card__desc">PDF + visio 1h</div>
+          <div class="tp-card__btn">Accéder au niveau 2 →</div>
+        </a>
 
-      <a class="tp-card" href="https://buy.stripe.com/00wbJ0gXpaCW80lgDwfEk01" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Niveau 2 — Premium</div>
-          <div class="tp-card__price">119 €</div>
-        </div>
-        <div class="tp-card__desc">PDF + visio 1h</div>
-        <div class="tp-card__btn">Accéder au niveau 2 →</div>
-      </a>
+        <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Niveau 3 — Groupe</div>
+            <div class="tp-card__price">199 €</div>
+          </div>
+          <div class="tp-card__desc">Plusieurs personnes + visio</div>
+          <div class="tp-card__btn">Accéder au niveau 3 →</div>
+        </a>
 
-      <a class="tp-card" href="https://buy.stripe.com/14A4gy6iL6mG94pbjcfEk02" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Niveau 3 — Groupe</div>
-          <div class="tp-card__price">199 €</div>
-        </div>
-        <div class="tp-card__desc">Plusieurs personnes + visio</div>
-        <div class="tp-card__btn">Accéder au niveau 3 →</div>
-      </a>
+        <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Niveau 4 — Trek structuré</div>
+            <div class="tp-card__price">249 €</div>
+          </div>
+          <div class="tp-card__desc">Itinérance / étapes optimisées</div>
+          <div class="tp-card__btn">Accéder au niveau 4 →</div>
+        </a>
+      </div>
 
-      <a class="tp-card" href="https://buy.stripe.com/00w8wO6iL6mGa8tdrkfEk03" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Niveau 4 — Trek structuré</div>
-          <div class="tp-card__price">249 €</div>
-        </div>
-        <div class="tp-card__desc">Itinérance / étapes optimisées</div>
-        <div class="tp-card__btn">Accéder au niveau 4 →</div>
-      </a>
+      <p class="tp-note">
+        Remarque : le Travel Planner est un service de conseil pour un voyage autonome (auto-guidé).
+        Les conditions en montagne et sur les sentiers peuvent évoluer : vous restez responsable de vos choix sur le terrain.
+      </p>
     </div>
-
-    <p class="tp-note">
-      Remarque : le Travel Planner est un service de conseil pour un voyage autonome (auto-guidé).
-      Les conditions en montagne et sur les sentiers peuvent évoluer : vous restez responsable de vos choix sur le terrain.
-    </p>
   </section>
 
-  <!-- DETAILS -->
-  <section style="margin-top:22px;">
+  <!-- BAND 4 : DÉTAILS -->
+  <section class="band band--dark band--line">
     <div class="container">
       <h2 class="tp-section__title">Détails de chaque niveau</h2>
       <p class="tp-section__lead">
         Pour savoir exactement ce que vous achetez : livrables, profondeur, niveau d’accompagnement.
       </p>
-    </div>
 
-    <div class="details">
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Niveau 1 — Essentiel</b>
-          <span class="price">59 €</span>
+      <div class="details">
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Niveau 1 — Essentiel</b>
+            <span class="price">59 €</span>
+          </div>
+          <p>Pour un séjour autonome : un carnet PDF clair, réaliste et adapté à la saison (sans visio).</p>
+          <ul>
+            <li>Questionnaire détaillé (profil, dates, envies, contraintes)</li>
+            <li>Itinéraire jour par jour + temps de route réalistes</li>
+            <li>Suggestions (patrimoine / points de vue / rando si souhaitée)</li>
+            <li>Conseils saison / météo + options simples</li>
+            <li>Livraison : <b>objectif 48h</b> après questionnaire complet</li>
+          </ul>
         </div>
-        <p>Pour un séjour autonome : un carnet PDF clair, réaliste et adapté à la saison (sans visio).</p>
-        <ul>
-          <li>Questionnaire détaillé (profil, dates, envies, contraintes)</li>
-          <li>Itinéraire jour par jour + temps de route réalistes</li>
-          <li>Suggestions (patrimoine / points de vue / rando si souhaitée)</li>
-          <li>Conseils saison / météo + options simples</li>
-          <li>Livraison : <b>objectif 48h</b> après questionnaire complet</li>
-        </ul>
-      </div>
 
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Niveau 2 — Premium</b>
-          <span class="price">119 €</span>
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Niveau 2 — Premium</b>
+            <span class="price">119 €</span>
+          </div>
+          <p>PDF + une visio 1h : idéal pour valider les choix, arbitrer et affiner.</p>
+          <ul>
+            <li><b>Visio 1h</b> : planification + questions/réponses</li>
+            <li>Itinéraire plus détaillé, optimisé (rythme, saison, logistique)</li>
+            <li>Alternatives météo / ajustements recommandés</li>
+            <li>PDF final + ajustements après l’échange</li>
+            <li>Livraison : <b>objectif 48h</b> après questionnaire (et visio si utile)</li>
+          </ul>
         </div>
-        <p>PDF + une visio 1h : idéal pour valider les choix, arbitrer et affiner.</p>
-        <ul>
-          <li><b>Visio 1h</b> : planification + questions/réponses</li>
-          <li>Itinéraire plus détaillé, optimisé (rythme, saison, logistique)</li>
-          <li>Alternatives météo / ajustements recommandés</li>
-          <li>PDF final + ajustements après l’échange</li>
-          <li>Livraison : <b>objectif 48h</b> après questionnaire (et visio si utile)</li>
-        </ul>
-      </div>
 
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Niveau 3 — Groupe</b>
-          <span class="price">199 €</span>
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Niveau 3 — Groupe</b>
+            <span class="price">199 €</span>
+          </div>
+          <p>Pour plusieurs personnes : un programme cohérent qui respecte le rythme du groupe.</p>
+          <ul>
+            <li>Contraintes du groupe intégrées (rythme, pauses, transferts)</li>
+            <li>Visio incluse : mise au point + décisions</li>
+            <li>Programme multi-jours cohérent (effort / repos)</li>
+            <li>Options de repli / météo</li>
+            <li>Carnet PDF structuré (facile à suivre)</li>
+          </ul>
         </div>
-        <p>Pour plusieurs personnes : un programme cohérent qui respecte le rythme du groupe.</p>
-        <ul>
-          <li>Contraintes du groupe intégrées (rythme, pauses, transferts)</li>
-          <li>Visio incluse : mise au point + décisions</li>
-          <li>Programme multi-jours cohérent (effort / repos)</li>
-          <li>Options de repli / météo</li>
-          <li>Carnet PDF structuré (facile à suivre)</li>
-        </ul>
-      </div>
 
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Niveau 4 — Trek structuré</b>
-          <span class="price">249 €</span>
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Niveau 4 — Trek structuré</b>
+            <span class="price">249 €</span>
+          </div>
+          <p>Pour un projet itinérance : étapes réalistes, logistique, variantes, recommandations terrain.</p>
+          <ul>
+            <li>Découpage d’étapes optimisé (effort / dénivelé / temps)</li>
+            <li>Conseils sécurité & saisonnalité (conditions terrain)</li>
+            <li>Logistique : accès, transferts, points clés</li>
+            <li>Variantes / solutions en cas de météo</li>
+            <li>Visio possible si nécessaire selon le projet</li>
+          </ul>
         </div>
-        <p>Pour un projet itinérance : étapes réalistes, logistique, variantes, recommandations terrain.</p>
-        <ul>
-          <li>Découpage d’étapes optimisé (effort / dénivelé / temps)</li>
-          <li>Conseils sécurité & saisonnalité (conditions terrain)</li>
-          <li>Logistique : accès, transferts, points clés</li>
-          <li>Variantes / solutions en cas de météo</li>
-          <li>Visio possible si nécessaire selon le projet</li>
-        </ul>
       </div>
     </div>
   </section>
 
-  <!-- OPTIONS (DEVIS / VISIO) -->
-  <section style="margin-top:22px;">
+  <!-- BAND 5 : OPTIONS -->
+  <section class="band band--soft band--line">
     <div class="container">
       <h2 class="tp-section__title">Votre projet sort du cadre ?</h2>
       <p class="tp-section__lead">
         Long séjour, demande complexe, itinéraire hybride, contraintes spécifiques… on peut faire du sur-mesure.
       </p>
-    </div>
 
-    <div class="details">
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Devis personnalisé</b>
-          <span class="price">Sur demande</span>
+      <div class="details">
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Devis personnalisé</b>
+            <span class="price">Sur demande</span>
+          </div>
+          <p>
+            Votre projet ne correspond pas à un niveau (long séjour, itinéraire complexe, contraintes spécifiques) ?
+            Je vous propose un devis clair. Si vous acceptez : lien Stripe dédié + tunnel associé.
+          </p>
+          <ul>
+            <li>Analyse rapide de votre demande</li>
+            <li>Devis sur mesure + validation</li>
+            <li>Si accepté : lien Stripe dédié + workflow identique</li>
+          </ul>
+          <p style="margin-top:12px;">
+            <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
+              Demander un devis (WhatsApp) →
+            </a>
+          </p>
         </div>
-        <p>
-          Votre projet ne correspond pas à un niveau (long séjour, itinéraire complexe, contraintes spécifiques) ?
-          Je vous propose un devis clair. Si vous acceptez : lien Stripe dédié + tunnel associé.
-        </p>
-        <ul>
-          <li>Analyse rapide de votre demande</li>
-          <li>Devis sur mesure + validation</li>
-          <li>Si accepté : lien Stripe dédié + workflow identique</li>
-        </ul>
-        <p style="margin-top:10px;">
-          <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
-            Demander un devis (WhatsApp) →
-          </a>
-        </p>
-      </div>
 
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Visio conseil (option indépendante)</b>
-          <span class="price">Sur demande</span>
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Visio conseil (option indépendante)</b>
+            <span class="price">Sur demande</span>
+          </div>
+          <p>
+            Vous voulez surtout un échange stratégique (sans carnet PDF complet) ?
+            Possible : on cadre les zones, le rythme, la saison, la logistique… et vous repartez avec des recommandations claires.
+          </p>
+          <ul>
+            <li>Analyse de votre idée de séjour</li>
+            <li>Arbitrages : zones, rythme, saison, logistique</li>
+            <li>Recommandations claires et réalistes</li>
+          </ul>
+          <p style="margin-top:12px;">
+            <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
+              Réserver une visio (WhatsApp) →
+            </a>
+          </p>
         </div>
-        <p>
-          Vous voulez surtout un échange stratégique (sans carnet PDF complet) ?
-          Possible : on cadre les zones, le rythme, la saison, la logistique… et vous repartez avec des recommandations claires.
-        </p>
-        <ul>
-          <li>Analyse de votre idée de séjour</li>
-          <li>Arbitrages : zones, rythme, saison, logistique</li>
-          <li>Recommandations claires et réalistes</li>
-        </ul>
-        <p style="margin-top:10px;">
-          <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
-            Réserver une visio (WhatsApp) →
-          </a>
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section style="margin-top:22px;">
+  <!-- BAND 6 : FAQ -->
+  <section class="band band--dark band--line">
     <div class="container">
       <h2 class="tp-section__title">FAQ</h2>
       <p class="tp-section__lead">Quelques réponses rapides avant de vous lancer.</p>
-    </div>
 
-    <div class="faq">
-      <details class="faqItem">
-        <summary>Est-ce une randonnée guidée ?</summary>
-        <p>
-          Non. Le Travel Planner est un service de conseil pour un voyage autonome.
-          Pour une sortie encadrée, voir la page Sorties.
-        </p>
-      </details>
+      <div class="faq">
+        <details class="faqItem">
+          <summary>Est-ce une randonnée guidée ?</summary>
+          <p>
+            Non. Le Travel Planner est un service de conseil pour un voyage autonome.
+            Pour une sortie encadrée, voir la page Sorties.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Je ne veux pas de randonnée.</summary>
-        <p>
-          Aucun souci. On peut construire un séjour axé patrimoine, villages, routes panoramiques, musées, églises,
-          nature douce, etc.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Je ne veux pas de randonnée.</summary>
+          <p>
+            Aucun souci. On peut construire un séjour axé patrimoine, villages, routes panoramiques, musées, églises,
+            nature douce, etc.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Quel délai pour recevoir mon PDF ?</summary>
-        <p>
-          Objectif : 48h après réception complète du questionnaire.
-          En haute saison, cela peut varier légèrement selon la charge (je vous le dis clairement).
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Quel délai pour recevoir mon PDF ?</summary>
+          <p>
+            Objectif : 48h après réception complète du questionnaire.
+            En haute saison, cela peut varier légèrement selon la charge (je vous le dis clairement).
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Je voyage en famille / en couple.</summary>
-        <p>
-          Très fréquent. On adapte le rythme, les temps de route, les pauses,
-          et on évite les journées irréalistes.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Je voyage en famille / en couple.</summary>
+          <p>
+            Très fréquent. On adapte le rythme, les temps de route, les pauses,
+            et on évite les journées irréalistes.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Vous planifiez le GR20 ?</summary>
-        <p>
-          Oui, uniquement en conseil (itinéraire, étapes, saison, logistique, variantes).
-          Je ne fournis pas de trace GPX.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Vous planifiez le GR20 ?</summary>
+          <p>
+            Oui, uniquement en conseil (itinéraire, étapes, saison, logistique, variantes).
+            Je ne fournis pas de trace GPX.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Je ne sais pas quel niveau choisir.</summary>
-        <p>
-          Si vous hésitez, Premium (avec visio) est souvent le plus confortable.
-          Sinon, écrivez-moi : je vous conseille rapidement.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Je ne sais pas quel niveau choisir.</summary>
+          <p>
+            Si vous hésitez, Premium (avec visio) est souvent le plus confortable.
+            Sinon, écrivez-moi : je vous conseille rapidement.
+          </p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <div class="footer">
-    © <span id="y"></span> Yann Pasqualini — Biguglia, Corse.
-    <div style="margin-top:6px;font-size:12px;">
-      Téléphone / WhatsApp : +33 6 07 65 64 27 · <a href="index.html#contact">Contact</a>
+  <!-- FOOTER -->
+  <section class="footer">
+    <div class="container">
+      © <span id="y"></span> Yann Pasqualini — Biguglia, Corse.
+      <div style="margin-top:6px;font-size:12px;">
+        Téléphone / WhatsApp : +33 6 07 65 64 27 · <a href="index.html#contact">Contact</a>
+      </div>
     </div>
-  </div>
+  </section>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
