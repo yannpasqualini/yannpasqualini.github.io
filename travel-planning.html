@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Corsica Travel Planner | Yann Pasqualini</title>
-  <meta name="description" content="Plan your Corsica trip with a local expert: realistic day-by-day PDF itinerary including hiking, heritage, landscapes and logistics adapted to the season." />
+  <meta name="description" content="Plan your Corsica trip with a local expert: a realistic day-by-day PDF itinerary including heritage, scenery, logistics — and hiking if you want." />
 
   <link rel="canonical" href="https://yannpasqualini.github.io/travel-planning.html" />
 
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Corsica Travel Planner | Yann Pasqualini" />
-  <meta property="og:description" content="A realistic, season-adapted day-by-day itinerary for Corsica — hiking, heritage, scenery and logistics designed by a local expert." />
+  <meta property="og:description" content="A realistic, season-adapted day-by-day itinerary for Corsica — heritage, scenery, logistics, and optional hiking, designed by a local expert." />
   <meta property="og:url" content="https://yannpasqualini.github.io/travel-planning.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_GB" />
@@ -26,7 +26,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Corsica Travel Planner | Yann Pasqualini" />
-  <meta name="twitter:description" content="A realistic day-by-day Corsica itinerary: hiking, heritage, scenery & logistics adapted to the season." />
+  <meta name="twitter:description" content="A realistic day-by-day Corsica itinerary: heritage, scenery & logistics adapted to the season (optional hiking)." />
   <meta name="twitter:image" content="https://yannpasqualini.github.io/images/images/images/transversale-corte-ota.jpg?v=3" />
 
   <!-- JSON-LD -->
@@ -35,7 +35,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Yann Pasqualini",
-    "description": "Corsica travel planner and mountain professional. Bespoke itineraries combining hiking, heritage and realistic logistics.",
+    "description": "Corsica travel planner: bespoke itineraries and realistic advice (logistics, heritage, scenery, optional hiking).",
     "url": "https://yannpasqualini.github.io/",
     "telephone": "+33607656427",
     "address": {
@@ -109,7 +109,7 @@
       color:rgba(255,255,255,.88);
       font-size:clamp(15px, 2.1vw, 18px);
       line-height:1.45;
-      max-width:66ch;
+      max-width:70ch;
     }
     .tp-hero__cta{
       display:inline-flex;
@@ -145,9 +145,9 @@
       font-size:clamp(22px, 3.2vw, 30px);
       color:#eaeaea;
     }
-    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.6; }
+    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.7; }
 
-    /* PACK GRID */
+    /* LEVEL GRID */
     .tp-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -173,7 +173,7 @@
       border:1px solid rgba(255,255,255,.10);
       background:rgba(20,26,22,.78);
       box-shadow:0 18px 50px rgba(0,0,0,.35);
-      transition:transform .12s ease, border-color .12s ease, filter .12s ease;
+      transition:transform .12s ease, border-color .12s ease;
     }
     .tp-card:hover{ transform:translateY(-2px); border-color:rgba(244,208,122,.35); }
     .tp-card__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
@@ -192,9 +192,9 @@
       background:linear-gradient(180deg,var(--gold1),var(--gold2));
     }
 
-    .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; }
+    .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; line-height:1.55; }
 
-    /* BLOCKS / CARDS */
+    /* GENERIC CARDS */
     .grid3{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -213,14 +213,15 @@
       box-shadow:0 18px 50px rgba(0,0,0,.25);
     }
     .card b{display:block;margin-bottom:6px;}
-    .card ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.6;}
+    .card ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.7;}
+    .card p{margin:0;color:var(--muted);line-height:1.75;}
 
     .leadText{
       width:min(980px,100%);
       margin:0 auto;
       padding:0 16px;
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.85;
     }
 
     .details{
@@ -244,8 +245,8 @@
       margin-bottom:8px;
     }
     .detailHead .price{color:var(--gold1);font-weight:900;}
-    .detailCard p{margin:6px 0 0;color:var(--muted);line-height:1.65;}
-    .detailCard ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.7;}
+    .detailCard p{margin:6px 0 0;color:var(--muted);line-height:1.75;}
+    .detailCard ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.75;}
 
     .divider{
       width:min(980px,100%);
@@ -255,7 +256,7 @@
       opacity:.9;
     }
 
-    /* METHOD (5 steps) */
+    /* METHOD */
     .steps{
       width:min(980px,100%);
       margin:12px auto 0;
@@ -265,7 +266,6 @@
       gap:12px;
     }
     @media(max-width:980px){ .steps{grid-template-columns:1fr;} }
-
     .step{
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
@@ -273,7 +273,7 @@
       background:rgba(255,255,255,.03);
     }
     .step b{display:block;margin-bottom:6px;}
-    .step p{margin:0;color:var(--muted);line-height:1.55;font-size:13px;}
+    .step p{margin:0;color:var(--muted);line-height:1.6;font-size:13px;}
 
     /* FAQ */
     .faq{
@@ -297,7 +297,7 @@
       list-style:none;
     }
     details.faqItem summary::-webkit-details-marker{display:none;}
-    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.65;font-size:13px;}
+    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:13px;}
 
     /* FOOTER */
     .footer{
@@ -342,52 +342,53 @@
     <header class="tp-hero__content">
       <h1 class="tp-hero__title">Plan your trip to Corsica</h1>
       <p class="tp-hero__subtitle">
-        A realistic day-by-day PDF itinerary adapted to the season: hiking (if you want), heritage, scenery & logistics.
-        Clear, coherent, and built around your pace — not a generic template.
+        A realistic day-by-day itinerary tailored to the season: heritage, scenery, logistics…
+        and hiking only if you want it. The goal: a coherent trip — not a generic plan.
       </p>
-      <a class="tp-hero__cta" href="#support-levels">See the support levels</a>
+
+      <a class="tp-hero__cta" href="#levels">See support levels</a>
 
       <div class="tp-chips" aria-label="Key points">
         <span class="tp-chip">UK English</span>
         <span class="tp-chip">International travellers</span>
         <span class="tp-chip">Culture + nature</span>
         <span class="tp-chip">Realistic logistics</span>
-        <span class="tp-chip">PDF travel booklet</span>
+        <span class="tp-chip">PDF booklet</span>
       </div>
 
       <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.8);">
-        Based in Biguglia (near Bastia). Service available worldwide via video call.
+        Based in Biguglia (near Bastia). Service available worldwide (video call).
       </p>
     </header>
   </section>
 
-  <!-- WHY TRUST -->
+  <!-- WHY -->
   <section style="margin-top:18px;">
     <div class="container">
-      <h2 class="tp-section__title">Why trust me with your Corsica trip?</h2>
+      <h2 class="tp-section__title">Why trust me with your trip?</h2>
     </div>
 
     <p class="leadText">
-      You don’t need a “Pinterest itinerary”. You need a plan that is <b>realistic</b>, adapted to the <b>season</b>,
-      your <b>pace</b>, and the <b>real driving times</b> in Corsica.
-      My role is simple: save you time, avoid common mistakes, and build a smooth, coherent trip.
+      You don’t need a “Pinterest itinerary”. You need a <b>realistic</b> plan, adapted to your <b>pace</b>,
+      the <b>season</b>, and the <b>real driving times</b> in Corsica.
+      My role is to save you time, avoid classic mistakes, and build a smooth, coherent trip.
     </p>
 
     <div class="grid3" style="margin-top:14px;">
       <div class="card">
-        <b>Local, field-based advice</b>
+        <b>Local expertise</b>
         <ul>
-          <li>Based in Corsica — I know the roads, distances and seasons</li>
-          <li>Honest guidance (what’s realistic / what isn’t)</li>
-          <li>Simple alternatives if weather or crowds change your plan</li>
+          <li>Based in Corsica: roads, distances, seasons</li>
+          <li>Honest advice (what’s realistic / what isn’t)</li>
+          <li>Simple alternatives for weather / crowds</li>
         </ul>
       </div>
 
       <div class="card">
-        <b>Your trip is not “only hiking”</b>
+        <b>Your trip isn’t “just hiking”</b>
         <ul>
           <li>Road trip, villages, heritage, viewpoints, beaches</li>
-          <li>Family / couple / friends: the rhythm is adjusted</li>
+          <li>Family / couple / friends: pace adapted</li>
           <li>Balance: nature + culture + rest</li>
         </ul>
       </div>
@@ -396,20 +397,20 @@
         <b>Clear deliverables</b>
         <ul>
           <li>Day-by-day itinerary</li>
-          <li>Personalised PDF travel booklet</li>
-          <li>Weather alternatives & practical adjustments</li>
+          <li>Personalised PDF booklet</li>
+          <li>Weather alternatives & adjustments</li>
         </ul>
       </div>
     </div>
 
-    <!-- MINI ABOUT (NO PHOTO) -->
+    <!-- MINI ABOUT (no photo) -->
     <div class="container" style="margin-top:14px;">
       <div class="card">
-        <b>About me (short)</b>
-        <p style="margin:0;color:var(--muted);line-height:1.7;">
-          I’m Yann Pasqualini — a mountain professional based in Biguglia (near Bastia).
-          I design bespoke Corsica itineraries: logistics, scenery, heritage, and hiking if you want it —
-          always with a coherent plan and realistic timings.
+        <b>In short</b>
+        <p>
+          I’m Yann Pasqualini, based in Biguglia (near Bastia).
+          I design bespoke Corsica itineraries: logistics, scenery, heritage,
+          and hiking if you want it — always with a coherent, realistic approach.
         </p>
       </div>
     </div>
@@ -418,43 +419,44 @@
   <!-- METHOD -->
   <section style="margin-top:22px;">
     <div class="container">
-      <h2 class="tp-section__title">My method</h2>
+      <h2 class="tp-section__title">My process</h2>
       <p class="tp-section__lead">
-        Simple, efficient, human — for an independent trip that feels smooth and realistic.
+        Simple, efficient, human — for well-built independent (self-guided) travel.
       </p>
     </div>
 
     <div class="steps">
       <div class="step">
         <b>1) Choose a level</b>
-        <p>Select the support level that fits your trip (PDF only, or PDF + call).</p>
+        <p>The right support level for your trip (PDF only, or PDF + video call).</p>
       </div>
       <div class="step">
         <b>2) Secure payment</b>
-        <p>Payment is made online via Stripe.</p>
+        <p>Online payment via Stripe.</p>
       </div>
       <div class="step">
         <b>3) Questionnaire</b>
-        <p>Dates, pace, interests (culture / hiking / road trip), constraints, must-sees.</p>
+        <p>Dates, pace, priorities (culture / road trip / hiking optional), constraints.</p>
       </div>
       <div class="step">
-        <b>4) Video call (if included)</b>
-        <p>Premium / Group: we validate choices, arbitrate, answer your questions.</p>
+        <b>4) Video call if included</b>
+        <p>Premium / Group: we align choices and answer your questions.</p>
       </div>
       <div class="step">
         <b>5) PDF delivery</b>
-        <p>You receive your personalised booklet (target: 48h after full questionnaire).</p>
+        <p>You receive your booklet (goal: within 48h after the completed questionnaire).</p>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- SUPPORT LEVELS (cards + links) -->
-  <section id="support-levels" class="tp-section" aria-label="Support levels">
+  <!-- LEVELS -->
+  <section id="levels" class="tp-section" aria-label="Support levels">
     <h2 class="tp-section__title">Support levels</h2>
     <p class="tp-section__lead">
-      Clear pricing, human support. After payment: questionnaire → (video call if included) → PDF travel booklet.
+      Clear price points, with real human support.
+      After payment: questionnaire → (video call if included) → PDF booklet.
     </p>
 
     <div class="tp-grid">
@@ -481,31 +483,32 @@
           <div class="tp-card__badge">Level 3 — Group</div>
           <div class="tp-card__price">€199</div>
         </div>
-        <div class="tp-card__desc">For multiple travellers + video call</div>
+        <div class="tp-card__desc">Multiple travellers + video call</div>
         <div class="tp-card__btn">Access level 3 →</div>
       </a>
 
       <a class="tp-card" href="https://buy.stripe.com/8x29ASePh3au5Sdaf8fEk07" target="_blank" rel="noopener">
         <div class="tp-card__top">
-          <div class="tp-card__badge">Level 4 — Structured Trek</div>
+          <div class="tp-card__badge">Level 4 — Structured trek</div>
           <div class="tp-card__price">€249</div>
         </div>
-        <div class="tp-card__desc">Trek stages & optimised route</div>
+        <div class="tp-card__desc">Multi-day trek stages optimised</div>
         <div class="tp-card__btn">Access level 4 →</div>
       </a>
     </div>
 
     <p class="tp-note">
-      Note: this is a planning advisory service for an independent (self-guided) trip. Conditions in Corsica can change quickly (mountains / trails / weather). You remain responsible for decisions on the ground.
+      Note: This is a travel planning service for independent (self-guided) travel.
+      Mountain conditions and trails can change: you remain responsible for your on-the-ground decisions.
     </p>
   </section>
 
-  <!-- DETAILS (your existing blocks, kept) -->
+  <!-- DETAILS -->
   <section style="margin-top:22px;">
     <div class="container">
       <h2 class="tp-section__title">What’s included in each level</h2>
       <p class="tp-section__lead">
-        So you know exactly what you’re paying for — deliverables, depth and level of support.
+        So you know exactly what you’re paying for: deliverables, depth and support level.
       </p>
     </div>
 
@@ -515,14 +518,13 @@
           <b>Level 1 — Essential</b>
           <span class="price">€59</span>
         </div>
-        <p>For independent travellers who want a realistic plan and the best options, without a video call.</p>
+        <p>A clear, realistic PDF booklet tailored to the season (no video call).</p>
         <ul>
-          <li>Detailed questionnaire</li>
-          <li>Day-by-day plan for your dates</li>
-          <li>Suggestions (heritage / viewpoints / hikes if you want them)</li>
-          <li>Realistic driving times, logistics and season advice</li>
-          <li>PDF travel booklet (clear structure)</li>
-          <li>Target delivery: <b>48h after full questionnaire</b></li>
+          <li>Detailed questionnaire (profile, dates, priorities, constraints)</li>
+          <li>Day-by-day plan + realistic driving times</li>
+          <li>Suggestions (heritage / viewpoints / optional hikes)</li>
+          <li>Season advice + simple backup options</li>
+          <li>Delivery goal: <b>within 48h</b> after the completed questionnaire</li>
         </ul>
       </div>
 
@@ -531,14 +533,13 @@
           <b>Level 2 — Premium</b>
           <span class="price">€119</span>
         </div>
-        <p>Perfect if you want to talk it through and validate choices together before finalising.</p>
+        <p>PDF + a 1-hour video call: ideal to validate choices and fine-tune.</p>
         <ul>
-          <li><b>1-hour video call</b> (planning + Q&A)</li>
-          <li>More detailed day-by-day itinerary</li>
-          <li>Logistics / timing optimisation</li>
-          <li>Weather alternatives & backup options</li>
-          <li>PDF travel booklet + refinements after the call</li>
-          <li>Target delivery: <b>48h after questionnaire</b> (and call if useful)</li>
+          <li><b>1-hour video call</b>: planning + Q&A</li>
+          <li>More detailed, optimised itinerary (pace, season, logistics)</li>
+          <li>Weather alternatives & recommended adjustments</li>
+          <li>Final PDF + refinements after the call</li>
+          <li>Delivery goal: <b>within 48h</b> (questionnaire + call if needed)</li>
         </ul>
       </div>
 
@@ -547,77 +548,77 @@
           <b>Level 3 — Group</b>
           <span class="price">€199</span>
         </div>
-        <p>For families / friends travelling together: a coherent plan that balances everyone’s pace.</p>
+        <p>For several travellers: a coherent programme that respects the group’s pace.</p>
         <ul>
-          <li>Group constraints & preferences integrated</li>
-          <li>Effort / rest / transfers balanced (no unrealistic days)</li>
-          <li>Weather / contingency options</li>
-          <li><b>Video call included</b> (decisions + arbitration)</li>
-          <li>Structured PDF travel booklet</li>
+          <li>Group constraints integrated (pace, breaks, transfers)</li>
+          <li>Video call included: alignment + decisions</li>
+          <li>Multi-day logic (effort / rest)</li>
+          <li>Backup options / weather</li>
+          <li>Structured PDF booklet (easy to follow)</li>
         </ul>
       </div>
 
       <div class="detailCard">
         <div class="detailHead">
-          <b>Level 4 — Structured Trek</b>
+          <b>Level 4 — Structured trek</b>
           <span class="price">€249</span>
         </div>
-        <p>For multi-day treks: realistic stages, logistics, and safer alternatives when conditions change.</p>
+        <p>For itinerant treks: realistic stages, logistics, variants, terrain-focused advice.</p>
         <ul>
           <li>Optimised stage plan (effort / elevation / time)</li>
-          <li>Logistics: access, supplies, key points</li>
-          <li>Backup ideas if weather changes</li>
-          <li>Terrain & safety-focused recommendations</li>
-          <li>Video call if needed (case-by-case)</li>
+          <li>Safety & seasonality advice (terrain conditions)</li>
+          <li>Logistics: access, transfers, key points</li>
+          <li>Variants / options for bad weather</li>
+          <li>Video call possible if needed (case-by-case)</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- BESPOKE + INDEPENDENT CALL -->
+  <!-- OPTIONS -->
   <section style="margin-top:22px;">
     <div class="container">
-      <h2 class="tp-section__title">Outside these levels?</h2>
+      <h2 class="tp-section__title">Outside the standard scope?</h2>
       <p class="tp-section__lead">
-        Long trip, complex request, hybrid itinerary, specific constraints… we can go bespoke.
+        Long trip, complex request, hybrid itinerary, special constraints… we can go fully bespoke.
       </p>
     </div>
 
     <div class="details">
       <div class="detailCard">
         <div class="detailHead">
-          <b>Bespoke quote</b>
+          <b>Custom quote</b>
           <span class="price">On request</span>
         </div>
         <p>
-          Your project doesn’t fit a standard level (long stay, complex routing, special constraints)?
-          I’ll send you a clear quote. If you accept, I create a dedicated payment link and follow the same workflow.
+          If your trip doesn’t fit a level (long stay, complex routing, special constraints),
+          I’ll send a clear quote. If you accept: a dedicated Stripe link + same workflow.
         </p>
         <ul>
-          <li>Quick analysis of your request</li>
-          <li>Clear quote + validation</li>
-          <li>If accepted: dedicated Stripe link + associated flow</li>
+          <li>Quick review of your request</li>
+          <li>Custom quote + validation</li>
+          <li>If accepted: dedicated Stripe link + same process</li>
         </ul>
         <p style="margin-top:10px;">
           <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
-            Request a quote (WhatsApp) →
+            Ask for a quote (WhatsApp) →
           </a>
         </p>
       </div>
 
       <div class="detailCard">
         <div class="detailHead">
-          <b>Independent planning call</b>
+          <b>Standalone video call</b>
           <span class="price">On request</span>
         </div>
         <p>
-          You mainly want a strategic conversation (without a full PDF booklet)? Possible.
-          We focus on decisions: areas, rhythm, seasons, logistics — and you leave with clear, realistic guidance.
+          If you mainly want a strategic conversation (without a full PDF),
+          we can frame the regions, pace, season, logistics — and you leave with clear recommendations.
         </p>
         <ul>
-          <li>Analyse your trip idea</li>
-          <li>Arbitration: zones, pacing, seasonality, logistics</li>
-          <li>Clear and realistic recommendations</li>
+          <li>Review of your trip idea</li>
+          <li>Decisions: regions, pace, season, logistics</li>
+          <li>Clear, realistic recommendations</li>
         </ul>
         <p style="margin-top:10px;">
           <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
@@ -632,52 +633,55 @@
   <section style="margin-top:22px;">
     <div class="container">
       <h2 class="tp-section__title">FAQ</h2>
-      <p class="tp-section__lead">Quick answers before you start.</p>
+      <p class="tp-section__lead">A few quick answers before you start.</p>
     </div>
 
     <div class="faq">
       <details class="faqItem">
-        <summary>Is this a guided tour?</summary>
+        <summary>Is this a guided hike?</summary>
         <p>
-          No. This is a planning advisory service for an independent (self-guided) trip.
-          If you want a guided hike, please check the “Hikes” page.
+          No. This is travel planning for independent, self-guided travel.
+          If you want a guided hike, please see the Hikes page.
         </p>
       </details>
 
       <details class="faqItem">
         <summary>I don’t want hiking.</summary>
         <p>
-          No problem. We can build a trip focused on heritage, villages, scenic drives, beaches, museums, easy nature walks, etc.
+          No problem. We can build a trip focused on heritage, villages, scenic roads, museums, churches,
+          and “soft nature”.
         </p>
       </details>
 
       <details class="faqItem">
-        <summary>How long to receive my PDF?</summary>
+        <summary>How fast will I receive my PDF?</summary>
         <p>
-          Target: 48 hours after I receive your full questionnaire.
-          In high season, it can vary slightly depending on workload — I’ll always be transparent.
+          Goal: within 48h after the completed questionnaire.
+          In peak season, it may vary slightly depending on workload (I’ll tell you clearly).
         </p>
       </details>
 
       <details class="faqItem">
-        <summary>We travel as a couple / family.</summary>
+        <summary>We’re travelling as a family / couple.</summary>
         <p>
-          Very common. I adapt pace, driving times, breaks and day structure so the trip feels smooth (and not exhausting).
+          Very common. We adapt pace, driving times, breaks,
+          and avoid unrealistic days.
         </p>
       </details>
 
       <details class="faqItem">
-        <summary>Can you help for the GR20?</summary>
+        <summary>Can you plan the GR20?</summary>
         <p>
-          Yes — as planning advice (stages, season, logistics, options). I don’t provide GPX tracks and I don’t replace mountain judgement on the ground.
+          Yes, as a planning/advice service only (stages, season, logistics, variants).
+          I do not provide GPX tracks.
         </p>
       </details>
 
       <details class="faqItem">
-        <summary>I don’t know which level to choose.</summary>
+        <summary>I’m not sure which level to choose.</summary>
         <p>
-          If you hesitate, Premium (with the video call) is often the most comfortable.
-          You can also message me and I’ll point you to the best option.
+          If you hesitate, Premium (with a video call) is usually the most comfortable.
+          Or message me and I’ll advise you quickly.
         </p>
       </details>
     </div>
