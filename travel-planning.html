@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Corsica Travel Planner | Yann Pasqualini</title>
-  <meta name="description" content="Plan your Corsica trip with a local expert: bespoke itineraries, heritage, scenery and realistic logistics adapted to the season. Personalised PDF travel booklet." />
+  <meta name="description" content="Plan your Corsica trip with a local expert: bespoke day-by-day itineraries mixing heritage, scenery and realistic logistics adapted to the season. Personalised PDF travel booklet." />
 
   <link rel="canonical" href="https://yannpasqualini.github.io/travel-planning.html" />
 
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Corsica Travel Planner | Yann Pasqualini" />
-  <meta property="og:description" content="Bespoke, realistic itineraries for Corsica — heritage, scenery, logistics and seasonal advice, designed by a local expert." />
+  <meta property="og:description" content="Realistic bespoke itineraries for Corsica — heritage, scenery, logistics and seasonal advice, designed by a local expert." />
   <meta property="og:url" content="https://yannpasqualini.github.io/travel-planning.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_GB" />
@@ -58,13 +58,34 @@
       --cardbg:rgba(255,255,255,.03);
       --gold1:#f4d07a;
       --gold2:#c79a38;
+
+      /* ✅ Desktop width: tweak here if needed (e.g. 1240) */
+      --siteMax: 1180px;
     }
     html,body{margin:0;padding:0;}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
     a{color:inherit;text-decoration:none;}
 
-    .wrap{max-width:1080px;margin:0 auto;padding:18px;}
-    .container{width:min(980px, 100%); margin:0 auto; padding:0 16px;}
+    /* Containers */
+    .wrap{max-width:1260px;margin:0 auto;padding:18px;}
+    .container{width:min(var(--siteMax), 100%); margin:0 auto; padding:0 18px;}
+
+    /* ✅ Bands (screen/chapter feel) */
+    .band{
+      width:100%;
+      padding:74px 0;
+    }
+    .band--soft{ background:rgba(255,255,255,.02); }
+    .band--dark{ background:rgba(0,0,0,.18); }
+    .band--line{ border-top:1px solid rgba(255,255,255,.08); }
+    @media(max-width:560px){
+      .band{ padding:54px 0; }
+      .wrap{padding:0;}
+    }
 
     /* NAV */
     .nav{
@@ -85,21 +106,22 @@
       max-height:820px;
       display:flex;
       align-items:flex-end;
-      padding:28px 16px 22px;
-      border-radius:18px;
+      padding:28px 18px 22px;
+      border-radius:22px;
       overflow:hidden;
       background-image:url("images/images/images/corse-travel-planner-hero.jpg");
       background-size:cover;
       background-position:center 35%;
+      box-shadow:0 22px 70px rgba(0,0,0,.45);
     }
     .tp-hero__overlay{
       position:absolute; inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.72) 10%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.10) 100%);
+      background:linear-gradient(to top, rgba(0,0,0,.74) 10%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.10) 100%);
     }
-    .tp-hero__content{ position:relative; width:min(980px, 100%); margin:0 auto; }
+    .tp-hero__content{ position:relative; width:min(var(--siteMax), 100%); margin:0 auto; }
     .tp-hero__title{
       margin:0 0 10px;
-      font-size:clamp(34px, 5vw, 54px);
+      font-size:clamp(34px, 5vw, 56px);
       line-height:1.05;
       letter-spacing:-.02em;
       color:#fff;
@@ -108,8 +130,8 @@
       margin:0 0 16px;
       color:rgba(255,255,255,.88);
       font-size:clamp(15px, 2.1vw, 18px);
-      line-height:1.45;
-      max-width:70ch;
+      line-height:1.5;
+      max-width:74ch;
     }
     .tp-hero__cta{
       display:inline-flex;
@@ -138,20 +160,69 @@
       backdrop-filter: blur(6px);
     }
 
-    /* SECTION TITLES */
-    .tp-section{ width:min(980px, 100%); margin:26px auto 0; padding:0 16px; }
+    /* Titles */
     .tp-section__title{
-      margin:0 0 6px;
-      font-size:clamp(22px, 3.2vw, 30px);
+      margin:0 0 8px;
+      font-size:clamp(22px, 3.2vw, 32px);
       color:#eaeaea;
+      letter-spacing:-.01em;
     }
-    .tp-section__lead{ margin:0 0 18px; color:rgba(255,255,255,.72); line-height:1.7; }
+    .tp-section__lead{
+      margin:0 0 18px;
+      color:rgba(255,255,255,.72);
+      line-height:1.75;
+      max-width:92ch;
+    }
 
-    /* LEVEL GRID */
+    /* Cards layout */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+      background:rgba(255,255,255,.03);
+      box-shadow:0 18px 50px rgba(0,0,0,.25);
+    }
+    .card b{display:block;margin-bottom:8px;}
+    .card ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.75;}
+    .card p{margin:0;color:var(--muted);line-height:1.8;}
+
+    .leadText{
+      color:var(--muted);
+      line-height:1.9;
+      max-width:100ch;
+      margin:0 0 18px;
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:980px){ .steps{grid-template-columns:1fr;} }
+    .step{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .step b{display:block;margin-bottom:6px;}
+    .step p{margin:0;color:var(--muted);line-height:1.7;font-size:13px;}
+
+    /* Packages (Levels) */
     .tp-grid{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
+      margin-top:14px;
     }
     @media (max-width:980px){
       .tp-grid{ grid-template-columns:repeat(2, 1fr); }
@@ -159,7 +230,6 @@
     @media (max-width:560px){
       .tp-grid{ grid-template-columns:1fr; }
       .tp-hero{ min-height:72vh; border-radius:0; }
-      .wrap{padding:0;}
       .nav{padding:16px 16px 18px;}
     }
 
@@ -167,9 +237,8 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-      padding:14px;
-      text-decoration:none;
-      border-radius:16px;
+      padding:16px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(20,26,22,.78);
       box-shadow:0 18px 50px rgba(0,0,0,.35);
@@ -179,55 +248,30 @@
     .tp-card__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
     .tp-card__badge{ font-weight:900; color:#fff; letter-spacing:.01em; }
     .tp-card__price{ font-weight:900; color:var(--gold1); font-size:20px; }
-    .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.35; min-height:34px; }
+    .tp-card__desc{ color:rgba(255,255,255,.72); font-size:13px; line-height:1.5; min-height:34px; }
     .tp-card__btn{
       margin-top:auto;
       display:flex;
       align-items:center;
       justify-content:center;
-      height:42px;
-      border-radius:12px;
+      height:44px;
+      border-radius:14px;
       font-weight:900;
       color:#1b1205;
       background:linear-gradient(180deg,var(--gold1),var(--gold2));
     }
 
-    .tp-note{ margin:14px 0 0; color:rgba(255,255,255,.65); font-size:13px; line-height:1.55; }
-
-    /* GENERIC CARDS */
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      width:min(980px,100%);
-      margin:0 auto;
-      padding:0 16px;
-    }
-    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
-
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:16px;
-      background:rgba(255,255,255,.03);
-      box-shadow:0 18px 50px rgba(0,0,0,.25);
-    }
-    .card b{display:block;margin-bottom:6px;}
-    .card ul{margin:8px 0 0 18px;color:var(--muted);line-height:1.7;}
-    .card p{margin:0;color:var(--muted);line-height:1.75;}
-
-    .leadText{
-      width:min(980px,100%);
-      margin:0 auto;
-      padding:0 16px;
-      color:var(--muted);
-      line-height:1.85;
+    .tp-note{
+      margin:14px 0 0;
+      color:rgba(255,255,255,.65);
+      font-size:13px;
+      line-height:1.65;
+      max-width:100ch;
     }
 
+    /* Details */
     .details{
-      width:min(980px,100%);
-      margin:14px auto 0;
-      padding:0 16px;
+      margin-top:14px;
       display:grid;
       grid-template-columns:repeat(2, 1fr);
       gap:14px;
@@ -237,49 +281,20 @@
     .detailCard{
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
-      padding:16px;
+      padding:18px;
       background:rgba(255,255,255,.03);
     }
     .detailHead{
       display:flex;align-items:baseline;justify-content:space-between;gap:10px;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
     .detailHead .price{color:var(--gold1);font-weight:900;}
-    .detailCard p{margin:6px 0 0;color:var(--muted);line-height:1.75;}
-    .detailCard ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.75;}
-
-    .divider{
-      width:min(980px,100%);
-      margin:22px auto 0;
-      padding:0 16px;
-      border-top:1px solid rgba(255,255,255,.08);
-      opacity:.9;
-    }
-
-    /* METHOD */
-    .steps{
-      width:min(980px,100%);
-      margin:12px auto 0;
-      padding:0 16px;
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:12px;
-    }
-    @media(max-width:980px){ .steps{grid-template-columns:1fr;} }
-    .step{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.03);
-    }
-    .step b{display:block;margin-bottom:6px;}
-    .step p{margin:0;color:var(--muted);line-height:1.6;font-size:13px;}
+    .detailCard p{margin:0;color:var(--muted);line-height:1.85;}
+    .detailCard ul{margin:12px 0 0 18px;color:var(--muted);line-height:1.85;}
 
     /* FAQ */
     .faq{
-      width:min(980px,100%);
-      margin:14px auto 0;
-      padding:0 16px;
+      margin-top:14px;
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:14px;
@@ -288,7 +303,7 @@
     details.faqItem{
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
-      padding:14px;
+      padding:16px;
       background:rgba(255,255,255,.03);
     }
     details.faqItem summary{
@@ -297,13 +312,11 @@
       list-style:none;
     }
     details.faqItem summary::-webkit-details-marker{display:none;}
-    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.7;font-size:13px;}
+    details.faqItem p{margin:10px 0 0;color:var(--muted);line-height:1.8;font-size:13px;}
 
-    /* FOOTER */
+    /* Footer */
     .footer{
-      width:min(980px,100%);
-      margin:16px auto 0 auto;
-      padding:18px 16px 28px 16px;
+      padding:26px 0 34px;
       border-top:1px solid rgba(255,255,255,.08);
       color:#9ca3af;
       font-size:13px;
@@ -315,14 +328,14 @@
 <body>
 
   <div class="wrap">
-    <div class="nav">
+    <div class="nav container" style="padding-left:18px;padding-right:18px;">
       <div class="brand">
         <img src="images/images/images/logo-travel-planner.png"
              alt="Yann Pasqualini Travel Planner logo"
              style="width:78px;height:78px;border-radius:50%;object-fit:cover;box-shadow:0 14px 40px rgba(0,0,0,.45);" />
         <div>
           <h1 class="brandTitle">Yann Pasqualini</h1>
-          <p class="brandSub">Corsica Travel Planner — bespoke itineraries (FR / UK English)</p>
+          <p class="brandSub">Corsica Travel Planner — bespoke itineraries (FR / EN UK)</p>
         </div>
       </div>
 
@@ -342,18 +355,18 @@
     <header class="tp-hero__content">
       <h1 class="tp-hero__title">Plan your trip to Corsica</h1>
       <p class="tp-hero__subtitle">
-        A realistic day-by-day itinerary adapted to the season: heritage, scenery, logistics…
+        A realistic, season-adapted day-by-day itinerary: heritage, scenery, logistics…
         and hiking if you want it. The goal: a coherent trip — not a generic plan.
       </p>
 
       <a class="tp-hero__cta" href="#packages">See packages</a>
 
       <div class="tp-chips" aria-label="Key points">
-        <span class="tp-chip">FR / UK English</span>
+        <span class="tp-chip">FR / EN (UK)</span>
         <span class="tp-chip">International travellers</span>
         <span class="tp-chip">Culture + nature</span>
         <span class="tp-chip">Realistic logistics</span>
-        <span class="tp-chip">PDF booklet</span>
+        <span class="tp-chip">PDF travel booklet</span>
       </div>
 
       <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.8);">
@@ -362,337 +375,344 @@
     </header>
   </section>
 
-  <!-- WHY -->
-  <section style="margin-top:18px;">
+  <!-- BAND 1 : WHY -->
+  <section class="band band--soft band--line">
     <div class="container">
       <h2 class="tp-section__title">Why trust me with your trip?</h2>
-    </div>
 
-    <p class="leadText">
-      You don’t need a “Pinterest itinerary”. You need a <b>realistic</b> plan,
-      adapted to your <b>pace</b>, the <b>season</b>, and the <b>real driving times</b> in Corsica.
-      My role: save you time, avoid classic mistakes, and build a smooth, coherent trip.
-    </p>
+      <p class="leadText">
+        You don’t need a “Pinterest itinerary”. You need a <b>realistic</b> plan,
+        adapted to your <b>pace</b>, the <b>season</b>, and the <b>real driving times</b> in Corsica.
+        My role: save you time, avoid the classic mistakes, and build a smooth, coherent trip.
+      </p>
 
-    <div class="grid3" style="margin-top:14px;">
-      <div class="card">
-        <b>Local expertise</b>
-        <ul>
-          <li>Based in Corsica: roads, distances, seasons</li>
-          <li>Honest advice (what’s realistic / what isn’t)</li>
-          <li>Simple alternatives for weather / crowds</li>
-        </ul>
+      <div class="grid3">
+        <div class="card">
+          <b>Local expertise</b>
+          <ul>
+            <li>Based in Corsica: roads, distances, seasons</li>
+            <li>Honest advice (what’s realistic / what isn’t)</li>
+            <li>Simple alternatives for weather / crowds</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Your trip ≠ “hiking only”</b>
+          <ul>
+            <li>Road trip, villages, heritage, viewpoints, beaches</li>
+            <li>Family / couple / friends: pace adapted</li>
+            <li>Balance: nature + culture + rest</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Clear deliverables</b>
+          <ul>
+            <li>Day-by-day itinerary</li>
+            <li>Personalised PDF booklet</li>
+            <li>Weather options & adjustments</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <b>Your trip isn’t “just hiking”</b>
-        <ul>
-          <li>Road trip, villages, heritage, panoramas, beaches</li>
-          <li>Family / couple / friends: pace adapted</li>
-          <li>Balance: nature + culture + rest</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <b>Clear deliverables</b>
-        <ul>
-          <li>Day-by-day itinerary</li>
-          <li>Personalised PDF booklet</li>
-          <li>Weather options & adjustments</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- MINI “ABOUT” (no photo) -->
-    <div class="container" style="margin-top:14px;">
-      <div class="card">
+      <div class="card" style="margin-top:14px;">
         <b>In short</b>
         <p>
           I’m Yann Pasqualini, based in Biguglia (near Bastia).
-          I design bespoke itineraries for Corsica: logistics, scenery, heritage,
-          and hiking if you want it — always with a coherent, realistic approach.
+        </p>
+        <p>
+          I help travellers build a realistic itinerary in Corsica,
+          taking into account the season, distances, driving times,
+          and your priorities (heritage, scenery, villages, nature, optional hikes).
+        </p>
+        <p>
+          The goal isn’t to “fill days”, but to create a coherent, smooth trip
+          that works on the ground — with a clear PDF booklet you can follow independently.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- METHOD -->
-  <section style="margin-top:22px;">
+  <!-- BAND 2 : METHOD -->
+  <section class="band band--dark band--line">
     <div class="container">
       <h2 class="tp-section__title">My method</h2>
       <p class="tp-section__lead">
         Simple, efficient, human — for a well-built self-guided trip.
       </p>
-    </div>
 
-    <div class="steps">
-      <div class="step">
-        <b>1) Choose a package</b>
-        <p>Select the right level of support (PDF only, or PDF + video call).</p>
-      </div>
-      <div class="step">
-        <b>2) Secure payment</b>
-        <p>Pay online via Stripe.</p>
-      </div>
-      <div class="step">
-        <b>3) Questionnaire</b>
-        <p>Dates, pace, priorities (culture / hiking / road trip), constraints.</p>
-      </div>
-      <div class="step">
-        <b>4) Video call if included</b>
-        <p>Premium / Group: we frame the trip, decide, and answer your questions.</p>
-      </div>
-      <div class="step">
-        <b>5) PDF delivery</b>
-        <p>You receive your personalised booklet (goal: 48h after a complete questionnaire).</p>
+      <div class="steps">
+        <div class="step">
+          <b>1) Choose a package</b>
+          <p>Pick the support level that fits your project (PDF only, or PDF + video call).</p>
+        </div>
+        <div class="step">
+          <b>2) Secure payment</b>
+          <p>Online payment via Stripe.</p>
+        </div>
+        <div class="step">
+          <b>3) Questionnaire</b>
+          <p>Dates, pace, preferences (culture / hikes / road trip), constraints, priorities.</p>
+        </div>
+        <div class="step">
+          <b>4) Video call if included</b>
+          <p>Premium / Group: we frame the plan, decide, and answer your questions.</p>
+        </div>
+        <div class="step">
+          <b>5) PDF delivery</b>
+          <p>You receive your personalised booklet (target: 48h after a complete questionnaire).</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- PACKAGES -->
-  <section id="packages" class="tp-section" aria-label="Packages">
-    <h2 class="tp-section__title">Packages</h2>
-    <p class="tp-section__lead">
-      Clear base pricing, with human support.
-      After payment: questionnaire access → (video call if included) → PDF travel booklet.
-    </p>
-
-    <div class="tp-grid">
-      <a class="tp-card" href="https://buy.stripe.com/bJe3cu7mP3au0xTgDwfEk04" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Package 1 — Essential</div>
-          <div class="tp-card__price">€59</div>
-        </div>
-        <div class="tp-card__desc">Personalised PDF (no video call)</div>
-        <div class="tp-card__btn">Go to package 1 →</div>
-      </a>
-
-      <a class="tp-card" href="https://buy.stripe.com/5kQeVc8qT9yS2G13QKfEk05" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Package 2 — Premium</div>
-          <div class="tp-card__price">€119</div>
-        </div>
-        <div class="tp-card__desc">PDF + 1-hour video call</div>
-        <div class="tp-card__btn">Go to package 2 →</div>
-      </a>
-
-      <a class="tp-card" href="https://buy.stripe.com/5kQ7sK0Yr4ey3K53QKfEk06" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Package 3 — Group</div>
-          <div class="tp-card__price">€199</div>
-        </div>
-        <div class="tp-card__desc">Multiple travellers + video call</div>
-        <div class="tp-card__btn">Go to package 3 →</div>
-      </a>
-
-      <a class="tp-card" href="https://buy.stripe.com/8x29ASePh3au5Sdaf8fEk07" target="_blank" rel="noopener">
-        <div class="tp-card__top">
-          <div class="tp-card__badge">Package 4 — Structured Trek</div>
-          <div class="tp-card__price">€249</div>
-        </div>
-        <div class="tp-card__desc">Multi-day trek / optimised stages</div>
-        <div class="tp-card__btn">Go to package 4 →</div>
-      </a>
-    </div>
-
-    <p class="tp-note">
-      Note: the Travel Planner is an advisory service for self-guided travel.
-      Mountain conditions and trails can change: you remain responsible for your decisions on the ground.
-    </p>
-  </section>
-
-  <!-- DETAILS -->
-  <section style="margin-top:22px;">
+  <!-- BAND 3 : PACKAGES -->
+  <section class="band band--soft band--line" id="packages">
     <div class="container">
-      <h2 class="tp-section__title">Package details</h2>
+      <h2 class="tp-section__title">Packages</h2>
       <p class="tp-section__lead">
-        So you know exactly what you’re buying: deliverables, depth, and level of support.
+        Clear price points, with human support.
+        After payment: questionnaire access → (video call if included) → PDF booklet.
+      </p>
+
+      <div class="tp-grid">
+        <a class="tp-card" href="https://buy.stripe.com/bJe3cu7mP3au0xTgDwfEk04" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Package 1 — Essential</div>
+            <div class="tp-card__price">€59</div>
+          </div>
+          <div class="tp-card__desc">Personalised PDF (no video call)</div>
+          <div class="tp-card__btn">Access package 1 →</div>
+        </a>
+
+        <a class="tp-card" href="https://buy.stripe.com/5kQeVc8qT9yS2G13QKfEk05" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Package 2 — Premium</div>
+            <div class="tp-card__price">€119</div>
+          </div>
+          <div class="tp-card__desc">PDF + 1-hour video call</div>
+          <div class="tp-card__btn">Access package 2 →</div>
+        </a>
+
+        <a class="tp-card" href="https://buy.stripe.com/5kQ7sK0Yr4ey3K53QKfEk06" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Package 3 — Group</div>
+            <div class="tp-card__price">€199</div>
+          </div>
+          <div class="tp-card__desc">Multiple travellers + video call</div>
+          <div class="tp-card__btn">Access package 3 →</div>
+        </a>
+
+        <a class="tp-card" href="https://buy.stripe.com/8x29ASePh3au5Sdaf8fEk07" target="_blank" rel="noopener">
+          <div class="tp-card__top">
+            <div class="tp-card__badge">Package 4 — Structured Trek</div>
+            <div class="tp-card__price">€249</div>
+          </div>
+          <div class="tp-card__desc">Multi-day trek / optimised stages</div>
+          <div class="tp-card__btn">Access package 4 →</div>
+        </a>
+      </div>
+
+      <p class="tp-note">
+        Note: the Travel Planner is an advisory service for a self-guided trip.
+        Mountain and trail conditions can change: you remain responsible for your choices on the ground.
       </p>
     </div>
-
-    <div class="details">
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Package 1 — Essential</b>
-          <span class="price">€59</span>
-        </div>
-        <p>For self-guided travel: a clear, realistic PDF booklet adapted to the season (no video call).</p>
-        <ul>
-          <li>Detailed questionnaire (profile, dates, priorities, constraints)</li>
-          <li>Day-by-day itinerary + realistic driving times</li>
-          <li>Suggestions (heritage / viewpoints / hiking if desired)</li>
-          <li>Season advice + simple weather alternatives</li>
-          <li>Delivery goal: <b>48h</b> after a complete questionnaire</li>
-        </ul>
-      </div>
-
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Package 2 — Premium</b>
-          <span class="price">€119</span>
-        </div>
-        <p>PDF + a 1-hour call: ideal to validate choices, decide, and refine.</p>
-        <ul>
-          <li><b>1-hour video call</b>: planning + Q&A</li>
-          <li>More detailed itinerary, optimised (pace, season, logistics)</li>
-          <li>Weather alternatives / recommended adjustments</li>
-          <li>Final PDF + tweaks after the call</li>
-          <li>Delivery goal: <b>48h</b> after questionnaire (and call if needed)</li>
-        </ul>
-      </div>
-
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Package 3 — Group</b>
-          <span class="price">€199</span>
-        </div>
-        <p>For multiple travellers: a coherent plan that respects the group’s pace.</p>
-        <ul>
-          <li>Group constraints integrated (pace, breaks, transfers)</li>
-          <li>Video call included: align + decide</li>
-          <li>Coherent multi-day programme (effort / rest)</li>
-          <li>Backup options / weather alternatives</li>
-          <li>Structured PDF booklet (easy to follow)</li>
-        </ul>
-      </div>
-
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Package 4 — Structured Trek</b>
-          <span class="price">€249</span>
-        </div>
-        <p>For an itinerant project: realistic stages, logistics, variants, terrain-focused recommendations.</p>
-        <ul>
-          <li>Optimised stage plan (effort / elevation / time)</li>
-          <li>Safety & seasonality advice (conditions)</li>
-          <li>Logistics: access, transfers, key points</li>
-          <li>Variants / solutions if the weather changes</li>
-          <li>Video call possible if needed (case-by-case)</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
-  <!-- OPTIONS (QUOTE / CALL) -->
-  <section style="margin-top:22px;">
+  <!-- BAND 4 : DETAILS -->
+  <section class="band band--dark band--line">
     <div class="container">
-      <h2 class="tp-section__title">Does your project fall outside the packages?</h2>
+      <h2 class="tp-section__title">What’s included in each package</h2>
       <p class="tp-section__lead">
-        Long trip, complex request, hybrid itinerary, special constraints… we can do truly bespoke.
+        So you know exactly what you’re paying for: deliverables, depth and level of support.
       </p>
-    </div>
 
-    <div class="details">
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Custom quote</b>
-          <span class="price">On request</span>
+      <div class="details">
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Package 1 — Essential</b>
+            <span class="price">€59</span>
+          </div>
+          <p>For an independent trip: a clear, realistic PDF booklet adapted to the season (no video call).</p>
+          <ul>
+            <li>Detailed questionnaire (profile, dates, preferences, constraints)</li>
+            <li>Day-by-day plan + realistic driving times</li>
+            <li>Suggestions (heritage / viewpoints / optional hikes)</li>
+            <li>Season / weather advice + simple options</li>
+            <li>Delivery: <b>48h target</b> after a complete questionnaire</li>
+          </ul>
         </div>
-        <p>
-          If your project doesn’t match a package (long trip, complex itinerary, specific constraints),
-          I’ll send a clear quote. If you accept: dedicated Stripe link + dedicated workflow.
-        </p>
-        <ul>
-          <li>Quick review of your request</li>
-          <li>Custom quote + validation</li>
-          <li>If accepted: dedicated Stripe link + same workflow</li>
-        </ul>
-        <p style="margin-top:10px;">
-          <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
-            Request a quote (WhatsApp) →
-          </a>
-        </p>
-      </div>
 
-      <div class="detailCard">
-        <div class="detailHead">
-          <b>Consultation call (standalone option)</b>
-          <span class="price">On request</span>
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Package 2 — Premium</b>
+            <span class="price">€119</span>
+          </div>
+          <p>PDF + a 1-hour video call: ideal to validate choices, decide and refine together.</p>
+          <ul>
+            <li><b>1-hour video call</b>: planning + Q&A</li>
+            <li>More detailed itinerary, optimised (pace, season, logistics)</li>
+            <li>Weather alternatives / recommended adjustments</li>
+            <li>Final PDF + tweaks after the call</li>
+            <li>Delivery: <b>48h target</b> after questionnaire (and call if needed)</li>
+          </ul>
         </div>
-        <p>
-          If what you mainly need is strategic guidance (without a full PDF booklet),
-          it’s possible: areas, pace, season, logistics… and you leave with clear recommendations.
-        </p>
-        <ul>
-          <li>Review of your trip idea</li>
-          <li>Decisions: areas, pace, season, logistics</li>
-          <li>Clear, realistic recommendations</li>
-        </ul>
-        <p style="margin-top:10px;">
-          <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
-            Book a call (WhatsApp) →
-          </a>
-        </p>
+
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Package 3 — Group</b>
+            <span class="price">€199</span>
+          </div>
+          <p>For multiple travellers: a coherent plan that respects the group’s pace.</p>
+          <ul>
+            <li>Group constraints integrated (pace, breaks, transfers)</li>
+            <li>Video call included: alignment + decisions</li>
+            <li>Coherent multi-day structure (effort / rest)</li>
+            <li>Backup options / weather</li>
+            <li>Structured PDF booklet (easy to follow)</li>
+          </ul>
+        </div>
+
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Package 4 — Structured Trek</b>
+            <span class="price">€249</span>
+          </div>
+          <p>For an itinerant project: realistic stages, logistics, variants and field-focused recommendations.</p>
+          <ul>
+            <li>Optimised stage breakdown (effort / elevation / time)</li>
+            <li>Safety & seasonality advice (conditions)</li>
+            <li>Logistics: access, transfers, key points</li>
+            <li>Variants / solutions in case of weather</li>
+            <li>Video call possible if needed (case-by-case)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section style="margin-top:22px;">
+  <!-- BAND 5 : OPTIONS -->
+  <section class="band band--soft band--line">
+    <div class="container">
+      <h2 class="tp-section__title">Does your project fall outside these packages?</h2>
+      <p class="tp-section__lead">
+        Long trip, complex request, hybrid itinerary, specific constraints… we can do true bespoke planning.
+      </p>
+
+      <div class="details">
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Custom quote</b>
+            <span class="price">On request</span>
+          </div>
+          <p>
+            Your project doesn’t fit a package (long trip, complex itinerary, specific constraints)?
+            I’ll send you a clear quote. If you accept: a dedicated Stripe link + the same workflow.
+          </p>
+          <ul>
+            <li>Quick review of your request</li>
+            <li>Bespoke quote + validation</li>
+            <li>If accepted: dedicated Stripe link + same workflow</li>
+          </ul>
+          <p style="margin-top:12px;">
+            <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
+              Request a quote (WhatsApp) →
+            </a>
+          </p>
+        </div>
+
+        <div class="detailCard">
+          <div class="detailHead">
+            <b>Strategy call (standalone option)</b>
+            <span class="price">On request</span>
+          </div>
+          <p>
+            You mainly want a strategic conversation (without a full PDF booklet)?
+            Possible: we define areas, pace, season, logistics… and you leave with clear, realistic recommendations.
+          </p>
+          <ul>
+            <li>Review of your initial trip idea</li>
+            <li>Decisions: areas, pace, season, logistics</li>
+            <li>Clear, realistic recommendations</li>
+          </ul>
+          <p style="margin-top:12px;">
+            <a class="tp-hero__cta" href="https://wa.me/33607656427" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px;">
+              Book a call (WhatsApp) →
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND 6 : FAQ -->
+  <section class="band band--dark band--line">
     <div class="container">
       <h2 class="tp-section__title">FAQ</h2>
-      <p class="tp-section__lead">Quick answers before you start.</p>
-    </div>
+      <p class="tp-section__lead">A few quick answers before you start.</p>
 
-    <div class="faq">
-      <details class="faqItem">
-        <summary>Is this a guided hike?</summary>
-        <p>
-          No. The Travel Planner is an advisory service for self-guided travel.
-          For a guided day out, please see the Hikes page.
-        </p>
-      </details>
+      <div class="faq">
+        <details class="faqItem">
+          <summary>Is this a guided hike?</summary>
+          <p>
+            No. The Travel Planner is an advisory service for a self-guided trip.
+            For guided experiences, see the Hikes page.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>I don’t want hiking.</summary>
-        <p>
-          No problem. We can build a trip focused on heritage, villages, scenic drives, museums, churches,
-          gentle nature, etc.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>I don’t want hiking.</summary>
+          <p>
+            No problem. We can build a trip focused on heritage, villages, scenic roads, museums, churches,
+            gentle nature, etc.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>How fast will I receive my PDF?</summary>
-        <p>
-          Goal: 48h after receiving a complete questionnaire.
-          In high season, it may vary slightly depending on workload (I’ll tell you clearly).
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>How long to receive my PDF?</summary>
+          <p>
+            Target: 48h after receiving a complete questionnaire.
+            In high season, it may vary slightly depending on workload (I’ll tell you clearly).
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>I’m travelling as a family / couple.</summary>
-        <p>
-          Very common. We adapt pace, driving times and breaks,
-          and avoid unrealistic days.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>I’m travelling as a family / couple.</summary>
+          <p>
+            Very common. We adapt the pace, driving times and breaks,
+            and avoid unrealistic days.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>Can you plan the GR20?</summary>
-        <p>
-          Yes, as advice only (route, stages, season, logistics, variants).
-          I do not provide GPX tracks.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>Can you plan the GR20?</summary>
+          <p>
+            Yes — advisory only (route, stages, season, logistics, variants).
+            I don’t provide GPX tracks.
+          </p>
+        </details>
 
-      <details class="faqItem">
-        <summary>I’m not sure which package to choose.</summary>
-        <p>
-          If you’re unsure, Premium (with a call) is often the most comfortable.
-          Otherwise, message me and I’ll advise you quickly.
-        </p>
-      </details>
+        <details class="faqItem">
+          <summary>I’m not sure which package to choose.</summary>
+          <p>
+            If you’re unsure, Premium (with a call) is usually the most comfortable.
+            Otherwise, message me — I’ll advise you quickly.
+          </p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <div class="footer">
-    © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica.
-    <div style="margin-top:6px;font-size:12px;">
-      Phone / WhatsApp: +33 6 07 65 64 27 · <a href="index-en.html#contact">Contact</a>
+  <!-- FOOTER -->
+  <section class="footer">
+    <div class="container">
+      © <span id="y"></span> Yann Pasqualini — Biguglia, Corsica.
+      <div style="margin-top:6px;font-size:12px;">
+        Phone / WhatsApp: +33 6 07 65 64 27 · <a href="index-en.html#contact">Contact</a>
+      </div>
     </div>
-  </div>
+  </section>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
