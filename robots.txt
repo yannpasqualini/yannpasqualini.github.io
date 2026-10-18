@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yannpasqualini.github.io/sitemap.xml
+Sitemap: https://www.aspassu.com/sitemap.xml
